@@ -3,7 +3,7 @@ import '../styles/Footer.css';
 export default function Footer() {
   return (
     <div className='Footer'>
-      <div className='container row space-around'>
+      <div className='Footer-container row space-around'>
         <div className='col'>
           <h5 className='text-light Footer-h5'>Sitemap</h5>
           <a className='text-light' href='#'>Home</a>
@@ -15,7 +15,7 @@ export default function Footer() {
           <span className='text-light'>Fake Street 123</span>
         </div>
       </div>
-      <div className='container row divider-top space-around'>
+      <div className='Footer-container row divider space-around'>
         <span className='text-center text-light'>©Copyright 2022 - All rights reserved - Lautaro Alessandro - Ignacio Giusti</span>
         <div>
           <a href='#' target="_blank"><img className='Footer-Socials' src='https://cdn-icons-png.flaticon.com/512/174/174855.png' alt='...' /></a>
