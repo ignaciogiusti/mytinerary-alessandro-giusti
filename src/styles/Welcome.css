@@ -50,10 +50,6 @@
   align-items: center;
 }
 
-.container {
-  width: 80%;
-}
-
 .text-border-black {
   -webkit-text-stroke: 2px black;
 }
