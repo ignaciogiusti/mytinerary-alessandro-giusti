@@ -9,9 +9,10 @@ export default function WebsiteLayout(props) {
             {/* <Nav/> */}
             {/*  <Header/> */}
             <Welcome/>
-            { props.children }
-            <Carousel/>
-            <Cities/>
+            {/* { props.children } */}
+            <Carousel slides={3} interval={3} range={4}/>
+            {/* <Cities/> */}
+            {/* <UnderConstruction/> */}
             <Footer/>
         </>
     )
