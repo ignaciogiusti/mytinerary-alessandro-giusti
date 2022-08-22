@@ -1,9 +1,16 @@
 import '../styles/Carousel.css'
+import SlideArrow from './Carousel/SlideArrow';
+import { useEffect, useState } from 'react'
 
-export default function Carousel() {
+export default function Carousel(props) {
 
-  const rangeItemStart = 0;
-  const rangeItemEnd = 4;
+  const itemRange = props.range;
+  const slidesLimit = (props.slides * itemRange);
+  const [rangeItemStart, setStart] = useState(0);
+  const [rangeItemEnd, setEnd] = useState(rangeItemStart + itemRange);
+  const [intervalTime, setIntervalTime] = useState();
+  const interval = props.interval * 1000;
+
 
   const carouselItemsContent = [
     { url: "/img/buenosAires.jpg", city: "Buenos Aires", country: "Argentina" },
@@ -20,6 +27,35 @@ export default function Carousel() {
     { url: "/img/Zermatt-Switzerland.jpg", city: "Zermatt", country: "Switzerland" },
   ];
 
+  useEffect(() => {
+    let slideTimer = setInterval(function () {
+      nextSlide()
+    }, interval)
+
+    setIntervalTime(slideTimer)
+
+    return () => clearInterval(intervalTime);
+  }, [rangeItemStart])
+
+  function previousSlide() {
+    if (rangeItemStart >= itemRange) {
+      setStart(rangeItemStart - itemRange)
+      setEnd(rangeItemEnd - itemRange)
+    } else {
+      setStart(slidesLimit - itemRange)
+      setEnd(slidesLimit)
+    }
+  }
+  function nextSlide() {
+    if (rangeItemStart < slidesLimit - itemRange) {
+      setStart(rangeItemStart + itemRange)
+      setEnd(rangeItemEnd + itemRange)
+    } else {
+      setStart(0)
+      setEnd(itemRange)
+    }
+  }
+
   const carouselSlide = (itemsMap) => (
     <div className='City-container'>
       <img className="City-img" src={itemsMap.url} />
@@ -29,11 +65,13 @@ export default function Carousel() {
 
   return (
     <>
+        <SlideArrow icon={"<"} click={previousSlide} />
         <div className='Carousel-slide justify-center'>
           {
             carouselItemsContent.slice(rangeItemStart, rangeItemEnd).map(carouselSlide)
           }
         </div>
+        <SlideArrow icon={">"} click={nextSlide} />
     </>
   )
 }

@@ -34,6 +34,11 @@
     .City-container {
         width: 50vh;
     }
+    .Arrow-button{
+        width: 5vh;
+        height: 5vh;
+        font-size: xx-large;
+    }
 }
 
 @media (min-width: 769px) {
