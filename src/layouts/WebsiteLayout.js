@@ -1,6 +1,7 @@
 import Welcome from '../pages/Welcome';
 import Footer from '../components/Footer';
 import Carousel from '../components/Carousel';
+import Cities from '../pages/Cities';
 
 export default function WebsiteLayout(props) {
     return (
@@ -10,6 +11,7 @@ export default function WebsiteLayout(props) {
             <Welcome/>
             { props.children }
             <Carousel/>
+            <Cities/>
             <Footer/>
         </>
     )
