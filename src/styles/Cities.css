@@ -31,11 +31,10 @@
     font-size: x-large;
 }
 .Search-Cities{
-    background-color: rgba(0, 0, 0, 0.652);
+    background-color: white !important;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    padding: 1rem 0 1rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
