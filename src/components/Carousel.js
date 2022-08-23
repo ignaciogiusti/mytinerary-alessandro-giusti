@@ -65,13 +65,15 @@ export default function Carousel(props) {
 
   return (
     <>
-        <SlideArrow icon={"<"} click={previousSlide} />
-        <div className='Carousel-slide justify-center'>
-          {
-            carouselItemsContent.slice(rangeItemStart, rangeItemEnd).map(carouselSlide)
-          }
-        </div>
-        <SlideArrow icon={">"} click={nextSlide} />
+      <div className='Carousel-container'>
+          <SlideArrow icon={"<"} click={previousSlide} />
+            <div className='Carousel-slide justify-center'>
+              {
+                carouselItemsContent.slice(rangeItemStart, rangeItemEnd).map(carouselSlide)
+              }
+            </div>
+          <SlideArrow icon={">"} click={nextSlide} />
+      </div>
     </>
   )
 }
