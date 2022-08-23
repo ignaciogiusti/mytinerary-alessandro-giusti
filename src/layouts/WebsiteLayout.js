@@ -13,6 +13,7 @@ export default function WebsiteLayout(props) {
             <Carousel slides={3} interval={3} range={4}/>
             <Cities/>
             {/* <UnderConstruction/> */}
+            {/* <NewCity/> */}
             <Footer/>
         </>
     )
