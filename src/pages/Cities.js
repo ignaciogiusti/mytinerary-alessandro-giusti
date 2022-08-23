@@ -19,21 +19,24 @@ export default function Cities() {
     ];
     
         const imgCitiesContainerView = (itemsMap) => (
-        <div className='City-container'>
+            <div className='City-container'>
             <img className="City-img" src={itemsMap.url} />
             <h3 className='City-text text-center'>{itemsMap.city} - {itemsMap.country}</h3>
         </div>
         )
-
-
-
-    return (
-        <div>
-                <div className='citiesPageContainer'>
-                    { 
-                        cities.map(imgCitiesContainerView) 
-                    }
+        
+        
+        
+        return (
+            <div>
+                <div className='Search-Cities'>
+                <input type="text" name="hola" placeholder=' Search by city...' />
                 </div>
-        </div>
+                    <div className='citiesPageContainer'>
+                        { 
+                            cities.map(imgCitiesContainerView) 
+                        }
+                    </div>
+            </div>
     )
 }

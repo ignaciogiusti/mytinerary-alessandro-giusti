@@ -5,6 +5,7 @@
     flex-flow: wrap;
     gap: 20px;
     padding: 20px 0;
+    padding-top: 3rem;
     background: url(/public/img/avionWallpaper.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -28,6 +29,23 @@
     padding-top: 15px;
     font-family: 'Permanent Marker';
     font-size: x-large;
+}
+.Search-Cities{
+    background-color: rgba(0, 0, 0, 0.652);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 1rem 0 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7rem;
+}
+input{
+    background-color: rgba(255, 255, 255, 0.686);
+    border-radius: 10px;
+    height: 2rem;
+    width: 20rem;
 }
 @media (min-width: 426px) {
     .City-container {
