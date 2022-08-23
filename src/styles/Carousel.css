@@ -5,9 +5,6 @@
     flex-flow: wrap;
     gap: 20px;
     padding: 20px 0;
-    background: url(/public/img/travel-bg1.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 .City-container {
@@ -29,15 +26,48 @@
     font-family: 'Permanent Marker';
     font-size: x-large;
 }
+.Carousel-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: gray;
+    background: url(/public/img/travel-bg1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 
 @media (min-width: 426px) {
     .City-container {
         width: 50vh;
+        margin-left: 2rem;
+        margin-right: 2rem;
     }
     .Arrow-button{
         width: 5vh;
         height: 5vh;
-        font-size: xx-large;
+        font-size: large;
+        background-color: transparent;
+        border-radius: 20px;
+        border: none;
+        transition: ease-in-out 0.2s;
+    }
+    .Arrow-button:hover{
+        background-color: rgba(128, 128, 128, 0.372);
+        border-radius: 20px;
+    }
+    .Arrow-button:active{
+        background-color: rgba(25, 25, 25, 0.372);
+        transition: ease-in-out 0.1s;
+    }
+    .Carousel-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        background: url(/public/img/travel-bg1.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
 }
 
