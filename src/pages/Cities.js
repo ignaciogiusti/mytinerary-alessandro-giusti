@@ -1,4 +1,3 @@
-import React from 'react'
 import '../styles/Cities.css'
 
 export default function Cities() {
