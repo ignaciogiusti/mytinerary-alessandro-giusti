@@ -28,7 +28,7 @@ export default function Cities() {
         
         
         return (
-            <div>
+            <div className='padding-top'>
                 <div className='Search-Cities'>
                 <input type="text" name="hola" placeholder=' Search by city...' />
                 </div>

@@ -1,11 +1,26 @@
 .navbar{
     display: flex;
-    height: 8rem;
+    height: 10vh;
+    justify-content: space-between;
     padding: 0 1rem 0 1rem ;
     align-items: center;
-    color: white;
-    background-color: black;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.212);
 }
-.links{
+.navbar-links{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
     margin-left: 1rem;
+}
+.img-user{
+    height: 50px;
+    width: 50px;
+}
+.justify-start{
+    display: flex;
+    align-items: center;
+    justify-content: start;
 }

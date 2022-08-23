@@ -6,15 +6,21 @@
 
 .Main {
   background: url(https://fondosmil.com/fondo/2258.jpg);
-  height: 86.1vh;
+  height: 90vh;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-
+.padding-top{
+  background-color: black;
+  padding-top: 10vh;
+}
 .text-center {
   text-align: center;
 }
-
+.justify-start{
+  display: flex;
+  justify-content: start;
+}
 .text-light {
   color: rgb(235, 235, 235);
   text-decoration: none;

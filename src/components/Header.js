@@ -1,15 +1,25 @@
 import '../styles/Header.css'
 import { Link as LinkRouter } from 'react-router-dom';
 
-const navLinks = (page) =>  <LinkRouter className='' to={page.to}>{page.name}Cities</LinkRouter>
+const pages = [
+  {name: 'Home', to: '/'},
+  {name: 'Cities', to: '/cities'},
+  {name: 'NewCity', to: '/newcity'}
+]
+
+const navLinks = (page) =>  <LinkRouter className='navbar-links' to={page.to}>{page.name}</LinkRouter>
 
 export default function Header() {
   return (
     <>
         <div className='navbar'>
-        <LinkRouter className='text-light links' to='/'>Home</LinkRouter>
-        <LinkRouter className='text-light links' to='/'>Cities</LinkRouter>
-            {/* { pages.map(navLinks) } */}
+          <div className='justify-start'>
+          <img className='img-user' src="/img/usuario.png" alt=""/>
+            { pages.map(navLinks) }
+          </div>
+            <div>
+            <img className='img-user' src="/img/usuario.png" alt=""/>
+            </div>
         </div>
     </>
   )

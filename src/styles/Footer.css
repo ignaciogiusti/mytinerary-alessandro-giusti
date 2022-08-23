@@ -24,3 +24,20 @@
   padding: 15px 0 0 0;
   border-top: 1px solid rgb(235, 235, 235);
 }
+.Arrow-button-footer{
+    width: 5vh;
+    height: 5vh;
+    font-size: large;
+    background-color: transparent;
+    border-radius: 20px;
+    border: 2px solid black;
+    transition: ease-in-out 0.2s;
+}
+.Arrow-button-footer:hover{
+    background-color: rgba(128, 128, 128, 0.372);
+    border-radius: 20px;
+}
+.Arrow-button-footer:active{
+    background-color: rgba(25, 25, 25, 0.372);
+    transition: ease-in-out 0.1s;
+}

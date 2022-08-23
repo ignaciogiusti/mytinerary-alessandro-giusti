@@ -1,13 +1,32 @@
 import '../styles/Footer.css';
+import { Link as LinkRouter } from 'react-router-dom';
+
+const pages = [
+  {name: 'Home', to: '/'},
+  {name: 'Cities', to: '/cities'},
+  {name: 'NewCity', to: '/newcity'}
+]
+
+const navLinks = (page) =>  <LinkRouter className='navbar-links' to={page.to}>{page.name}</LinkRouter>
 
 export default function Footer() {
+
+  const scrollUp = () =>{
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
   return (
     <div className='Footer'>
       <div className='Footer-container row space-around'>
+        <div>
+          <button className="Arrow-button-footer" onClick={scrollUp}>^</button>
+        </div>
         <div className='col'>
           <h5 className='text-light Footer-h5'>Sitemap</h5>
-          <a className='text-light' href='#'>Home</a>
-          <a className='text-light' href='#'>Cities</a>
+          { pages.map(navLinks) }
         </div>
         <div className='col'>
           <h5 className='text-light Footer-h5'>Contact</h5>
