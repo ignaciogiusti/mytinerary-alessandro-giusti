@@ -6,8 +6,9 @@ const navLinks = (page) =>  <LinkRouter className='' to={page.to}>{page.name}Cit
 export default function Header() {
   return (
     <>
-        <div className=''>
-        <LinkRouter to='/'>Cities</LinkRouter>
+        <div className='navbar'>
+        <LinkRouter className='text-light links' to='/'>Home</LinkRouter>
+        <LinkRouter className='text-light links' to='/'>Cities</LinkRouter>
             {/* { pages.map(navLinks) } */}
         </div>
     </>
