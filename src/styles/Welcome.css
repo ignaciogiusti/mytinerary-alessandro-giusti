@@ -63,6 +63,7 @@
   padding: 8px;
   font-weight: bold;
   border-radius: 6px;
+  transform: rotate(90deg);
 }
 
 .Welcome-Button:hover {
