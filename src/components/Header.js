@@ -26,11 +26,6 @@ export default function Header() {
 
   return (
     <div className='navbar'>
-      <div className='hide-nav-desktop'>
-        <div className='row row-menu'>
-          {pages.map(navLinks)}
-        </div>
-      </div>
       <button className='buttonNavbar hide-nav-burger' onClick={handleOpenMenu}><img className='img-burger' src='img/MenuBurger.png' />
         <div>
           {
@@ -40,7 +35,12 @@ export default function Header() {
           }
         </div>
       </button>
-      <img className='img-user' src="/img/usuario.png" alt="logo" />
+      <LinkRouter  to='/'><img className='img-user' src="/img/logo.png" alt="logo" /></LinkRouter>
+      <div className='hide-nav-desktop'>
+        <div className='row row-menu'>
+          {pages.map(navLinks)}
+        </div>
+      </div>
       <img className='img-user' src="/img/usuario.png" alt="avatar" />
     </div>
   )
