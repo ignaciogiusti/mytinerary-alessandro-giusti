@@ -14,7 +14,7 @@ export default function Carousel(props) {
 
   const carouselItemsContent = [
     { url: "/img/buenosAires.jpg", city: "Buenos Aires", country: "Argentina" },
-    { url: "/img/venice.jpg", city: "Venice", country: "Italy" },
+    { url: "/img/rome.jpg", city: "Rome", country: "Italy" },
     { url: "/img/cancun.jpg", city: "Cancun", country: "Mexico" },
     { url: "/img/capetown.jpg", city: "Cape Town", country: "South Africa" },
     { url: "/img/edinburgh.jpg", city: "Edinburgh", country: "Scotland" },
@@ -65,17 +65,17 @@ export default function Carousel(props) {
 
   return (
     <>
-      <div className='Carousel-container'>
-        <SlideArrow icon={"<"} click={previousSlide} />
-        <div>
-          <h5 className='Welcome-Title text-border-black text-light text-center'>Popular MyTineraries</h5>
-          <div className='Carousel-slide justify-center'>
-            {
-              carouselItemsContent.slice(rangeItemStart, rangeItemEnd).map(carouselSlide)
-            }
+      <div className='Carousel-bg'>
+        <h5 className='Carousel-Title text-light text-center'>Popular My<span className='Title-Tinerary'>Tineraries</span></h5>
+        <div className='Carousel-container'>
+          <SlideArrow icon={<img className='Arrow-img' src='img/arrow-left-light.png' />} click={previousSlide} />
+          <div>
+            <div className='Carousel-slide justify-center'>
+              {carouselItemsContent.slice(rangeItemStart, rangeItemEnd).map(carouselSlide)}
+            </div>
           </div>
+          <SlideArrow icon={<img className='Arrow-img' src='img/arrow-right-light.png' />} click={nextSlide} />
         </div>
-        <SlideArrow icon={">"} click={nextSlide} />
       </div>
     </>
   )

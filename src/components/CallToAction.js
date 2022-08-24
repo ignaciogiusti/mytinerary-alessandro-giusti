@@ -1,4 +1,3 @@
-import '../styles/CallToAction.css'
 import { Link as LinkRouter } from 'react-router-dom';
 
 function CallToAction() {

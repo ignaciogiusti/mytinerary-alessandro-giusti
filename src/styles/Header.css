@@ -8,6 +8,7 @@
     z-index: 1;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.212);
+    backdrop-filter: blur(3px);
 }
 .navbar-links{
     color: white;
@@ -23,4 +24,9 @@
     display: flex;
     align-items: center;
     justify-content: start;
+}
+
+.Bar{
+    background-color: rgb(80, 35, 20);
+    height: 10vh;
 }

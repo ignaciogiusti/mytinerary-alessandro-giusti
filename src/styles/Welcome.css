@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,22 +7,26 @@
 }
 
 .Main {
-  background: url(https://fondosmil.com/fondo/2258.jpg);
+  background: url(/public/img/Venice.jpg);
   height: 90vh;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-.padding-top{
+
+.padding-top {
   background-color: black;
   padding-top: 10vh;
 }
+
 .text-center {
   text-align: center;
 }
-.justify-start{
+
+.justify-start {
   display: flex;
   justify-content: start;
 }
+
 .text-light {
   color: rgb(235, 235, 235);
   text-decoration: none;
@@ -81,6 +87,7 @@
 .Welcome-Button:active {
   background-color: #8f1800;
 }
+
 .Welcome-p {
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(3px);
@@ -89,6 +96,13 @@
   font-size: large;
   font-weight: bold;
 }
+
 .Welcome-Title {
-  font-size: 50px;
+  font-size: 6.5vh;
+  color: whitesmoke;
+  text-shadow: 2px 2px 5px black;
+}
+
+.Title-Tinerary {
+  color: orange;
 }
