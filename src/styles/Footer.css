@@ -24,3 +24,25 @@
   padding: 15px 0 0 0;
   border-top: 1px solid rgb(235, 235, 235);
 }
+
+.Footer-arrow-button {
+  background-color: transparent;
+  border: none;
+}
+
+.Footer-arrow-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 360px;
+  border: whitesmoke solid 4px;
+}
+
+.Footer-arrow-img:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: ease-in-out 0.2s;
+}
+
+.Footer-arrow-img:active {
+  background-color: darkred;
+  transition: ease-in-out 0.1s;
+}
