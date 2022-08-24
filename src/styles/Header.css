@@ -30,3 +30,15 @@
     background-color: rgb(80, 35, 20);
     height: 10vh;
 }
+
+a{
+    text-decoration: none;
+}
+.buttonNavbar{
+    color: white;
+    border: 2px solid black;
+    background-color: rgba(0, 0, 0, 0.193);
+    font-size: large;
+    height: 5vh;
+    width: 5vw;
+}
