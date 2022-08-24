@@ -5,7 +5,7 @@ export default function Cities() {
 
     const cities = [
         { url: "/img/buenosAires.jpg", city: "Buenos Aires", country: "Argentina" },
-        { url: "/img/venice.jpg", city: "Venice", country: "Italy" },
+        { url: "/img/rome.jpg", city: "Rome", country: "Italy" },
         { url: "/img/cancun.jpg", city: "Cancun", country: "Mexico" },
         { url: "/img/capetown.jpg", city: "Cape Town", country: "South Africa" },
         { url: "/img/edinburgh.jpg", city: "Edinburgh", country: "Scotland" },
@@ -28,7 +28,7 @@ export default function Cities() {
         
         
         return (
-            <div className='padding-top'>
+            <>
                 <div className='Search-Cities'>
                 <input type="text" name="hola" placeholder=' Search by city...' />
                 </div>
@@ -37,6 +37,6 @@ export default function Cities() {
                             cities.map(imgCitiesContainerView) 
                         }
                     </div>
-            </div>
+            </>
     )
 }

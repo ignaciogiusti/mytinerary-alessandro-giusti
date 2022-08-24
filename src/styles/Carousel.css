@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-
-.Carousel-container{
-    background-color: gray;
-    background: url(/public/img/travel-bg1.jpg);
+.Carousel-bg {
+    background: url(/public/img/travel-bg.jpg);
+    background-color: black;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+.Carousel-Title {
+    font-size: 4.5vh;
 }
 
 .Carousel-slide {
@@ -34,40 +36,44 @@
 }
 
 @media (max-width: 1025px) {
-    .Arrow-button{
+    .Arrow-button {
         display: none;
     }
 }
+
 @media (min-width: 426px) {
     .City-container {
         width: 50vh;
     }
-    .Carousel-container{
+
+    .Carousel-container {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 15px;
-        background: url(/public/img/travel-bg1.jpg);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
     }
-    .Arrow-button{
-        width: 5vh;
-        height: 5vh;
-        font-size: large;
+    .Arrow-button {
         background-color: transparent;
-        border-radius: 20px;
         border: none;
+    }
+
+    .Arrow-img {
+        height: 50px;
+        width: 50px;
+        border-radius: 360px;
+        border: whitesmoke solid 4px;
+    }
+
+    .Arrow-img:hover {
+        background-color: rgba(255, 255, 255, 0.5);
         transition: ease-in-out 0.2s;
     }
-    .Arrow-button:hover{
-        background-color: rgba(128, 128, 128, 0.372);
-        border-radius: 20px;
-    }
-    .Arrow-button:active{
-        background-color: rgba(25, 25, 25, 0.372);
+
+    .Arrow-img:active {
+        background-color: darkred;
         transition: ease-in-out 0.1s;
     }
+
 }
 
 @media (min-width: 769px) {
@@ -76,6 +82,7 @@
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 8rem;
     }
+
     .City-container {
         justify-self: center;
     }
