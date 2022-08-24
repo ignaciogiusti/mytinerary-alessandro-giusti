@@ -1,8 +1,8 @@
-.navbar{
+.navbar {
     display: flex;
-    height: 10vh;
+    min-height: 10vh;
     justify-content: space-between;
-    padding: 0 1rem 0 1rem ;
+    padding: 20px 1rem;
     align-items: center;
     width: 100%;
     z-index: 1;
@@ -10,35 +10,64 @@
     background-color: rgba(0, 0, 0, 0.212);
     backdrop-filter: blur(3px);
 }
-.navbar-links{
-    color: white;
+
+.navbar-links {
+    color: whitesmoke;
     font-weight: bold;
     text-decoration: none;
-    margin-left: 1rem;
 }
-.img-user{
+
+.img-user {
     height: 50px;
     width: 50px;
 }
-.justify-start{
-    display: flex;
-    align-items: center;
-    justify-content: start;
-}
 
-.Bar{
+.Bar {
     background-color: rgb(80, 35, 20);
     height: 10vh;
 }
 
-a{
-    text-decoration: none;
+.col-menu {
+    text-align: left;
+    gap: 15px;
+    padding: 15px 0 0 0;
 }
-.buttonNavbar{
-    color: white;
-    border: 2px solid black;
-    background-color: rgba(0, 0, 0, 0.193);
-    font-size: large;
-    height: 5vh;
-    width: 5vw;
+
+.row-menu {
+    padding: 0 15px 0 0;
+}
+
+.buttonNavbar {
+    border: none;
+    background-color: transparent;
+}
+
+.img-burger {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .hide-nav-desktop {
+        display: none;
+    }
+    .navbar {
+        align-items: flex-start;
+    }
+}
+
+@media (min-width: 1025px) {
+    .hide-nav-burger {
+        display: none;
+    }
+    .menu-hover {
+        padding: 10px;
+    }
+    .menu-hover:hover {
+        background-color: rgba(255, 0, 0, 0.25);
+        transition: ease-in-out 0.3s;
+        border-radius: 5px;
+    }
+
 }
