@@ -30,7 +30,7 @@ export default function Footer() {
           <span className='text-light'>+54 911 9999-9999</span>
           <span className='text-light'>Fake Street 123</span>
         </div>
-          <button className='Arrow-button' onClick={scrollUp}><img src='img/arrow-up-light.png' className='Arrow-img' /></button>
+          <button className='Footer-arrow-button' onClick={scrollUp}><img src='img/arrow-up-light.png' className='Footer-arrow-img' /></button>
       </div>
       <div className='Footer-container row divider space-evenly'>
         <span className='text-center text-light'>©Copyright 2022 - All rights reserved - Lautaro Alessandro - Ignacio Giusti</span>
