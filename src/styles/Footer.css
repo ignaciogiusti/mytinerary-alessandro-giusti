@@ -1,0 +1,48 @@
+.Footer {
+  background-color: rgb(80, 35, 20);
+  padding: 10px 0;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.Footer-container {
+  width: 85%;
+}
+
+.Footer-Socials {
+  height: 24px;
+  padding: 0 5px;
+}
+
+.Footer-h5 {
+  font-size: large;
+}
+
+.divider {
+  margin: 15px 0 0 0;
+  padding: 15px 0 0 0;
+  border-top: 1px solid rgb(235, 235, 235);
+}
+
+.Footer-arrow-button {
+  background-color: transparent;
+  border: none;
+}
+
+.Footer-arrow-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 360px;
+  border: whitesmoke solid 4px;
+}
+
+.Footer-arrow-img:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: ease-in-out 0.2s;
+}
+
+.Footer-arrow-img:active {
+  background-color: darkred;
+  transition: ease-in-out 0.1s;
+}

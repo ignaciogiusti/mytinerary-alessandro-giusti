@@ -1,0 +1,73 @@
+.navbar {
+    display: flex;
+    min-height: 10vh;
+    justify-content: space-between;
+    padding: 20px 1rem;
+    align-items: center;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.212);
+    backdrop-filter: blur(3px);
+}
+
+.navbar-links {
+    color: whitesmoke;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.img-user {
+    height: 50px;
+    width: 50px;
+}
+
+.Bar {
+    background-color: rgb(80, 35, 20);
+    height: 10vh;
+}
+
+.col-menu {
+    text-align: left;
+    gap: 15px;
+    padding: 15px 0 0 0;
+}
+
+.row-menu {
+    padding: 0 15px 0 0;
+}
+
+.buttonNavbar {
+    border: none;
+    background-color: transparent;
+}
+
+.img-burger {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .hide-nav-desktop {
+        display: none;
+    }
+    .navbar {
+        align-items: flex-start;
+    }
+}
+
+@media (min-width: 1025px) {
+    .hide-nav-burger {
+        display: none;
+    }
+    .menu-hover {
+        padding: 10px;
+    }
+    .menu-hover:hover {
+        background-color: rgba(255, 0, 0, 0.25);
+        transition: ease-in-out 0.3s;
+        border-radius: 5px;
+    }
+
+}

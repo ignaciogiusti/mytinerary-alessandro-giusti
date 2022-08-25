@@ -1,0 +1,90 @@
+.Carousel-bg {
+    background: url(/public/img/travel-bg.jpg);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.Carousel-Title {
+    padding-top: 15px;
+    font-size: 3.5vh;
+}
+
+.Carousel-slide {
+    display: flex;
+    flex-flow: wrap;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.City-container {
+    padding: 15px;
+    display: flex;
+    flex-flow: column;
+    background-color: whitesmoke;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25);
+}
+
+.City-img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.City-text {
+    padding-top: 15px;
+    font-family: 'Permanent Marker';
+    font-size: x-large;
+}
+
+@media (max-width: 1025px) {
+    .Arrow-button {
+        display: none;
+    }
+}
+
+@media (min-width: 426px) {
+    .City-container {
+        width: 50vh;
+    }
+
+    .Carousel-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+    .Arrow-button {
+        background-color: transparent;
+        border: none;
+    }
+
+    .Arrow-img {
+        height: 50px;
+        width: 50px;
+        border-radius: 360px;
+        border: whitesmoke solid 4px;
+    }
+
+    .Arrow-img:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+        transition: ease-in-out 0.2s;
+    }
+
+    .Arrow-img:active {
+        background-color: darkred;
+        transition: ease-in-out 0.1s;
+    }
+
+}
+
+@media (min-width: 769px) {
+    .Carousel-slide {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 8rem;
+    }
+
+    .City-container {
+        justify-self: center;
+    }
+}

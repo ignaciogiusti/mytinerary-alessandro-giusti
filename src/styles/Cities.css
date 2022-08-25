@@ -1,0 +1,121 @@
+.citiesPageContainer {
+    display: flex;
+    flex-flow: wrap;
+    gap: 20px;
+    padding: 20px 0;
+    padding-top: 3rem;
+    background: url(/public/img/travel-bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.City-container {
+    padding: 15px;
+    display: flex;
+    flex-flow: column;
+    width: 98%;
+    background-color: whitesmoke;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25);
+}
+
+.City-img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.City-text {
+    padding-top: 15px;
+    font-family: 'Permanent Marker';
+    font-size: x-large;
+}
+.Search-Cities{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7rem;
+    background-color: grey;
+}
+input{
+    background-color: rgba(255, 255, 255, 0.686);
+    border-radius: 5px;
+    height: 2rem;
+    width: 20rem;
+}
+@media (min-width: 426px) {
+    .City-container {
+        width: 50vh;
+    }
+}
+
+@media (min-width: 769px) {
+    .citiesPageContainer {
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .citiesContainer{
+    background-image: url('../avionWallpaper.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-flow: wrap column;
+    min-width: 100%;
+    gap: 20px;
+    padding: 20px 0;
+}
+.AllCity-container {
+    padding: 15px;
+    display: flex;
+    flex-flow: column;
+    width: 50vw;
+    height: 50vh;
+    background-color: whitesmoke;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25);
+}
+
+.All-City-img {
+    height: 45vh;
+    object-fit: cover;
+}
+
+.City-text {
+    padding-top: 15px;
+    font-family: 'Permanent Marker';
+    font-size: x-large;
+} */
+
+
+
+
+
+/* .AllCity-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.All-City-img{
+    height: 20rem;
+    width: 40rem;
+}  */
