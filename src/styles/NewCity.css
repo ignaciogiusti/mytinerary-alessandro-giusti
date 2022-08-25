@@ -1,0 +1,24 @@
+.main-NewCity{
+    padding: 1rem 0 1rem 0;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 3px;
+}
+.Input-NewCity{
+    padding: 1rem 0 1rem 0;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 3px;
+}
+.button-NewCity{
+    background-color: gray;
+    padding: .8rem 2rem;
+}
+.button-NewCity:hover{
+    color: whitesmoke;
+    background-color: rebeccapurple;
+}

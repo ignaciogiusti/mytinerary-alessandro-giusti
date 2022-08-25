@@ -17,6 +17,8 @@ export default function Footer() {
       behavior: 'smooth'
     });
   }
+  const fullYear = new Date ();
+  const year = (fullYear.getFullYear())
 
   return (
     <div className='Footer'>
@@ -33,7 +35,7 @@ export default function Footer() {
           <button className='Footer-arrow-button' onClick={scrollUp}><img src='img/arrow-up-light.png' className='Footer-arrow-img' /></button>
       </div>
       <div className='Footer-container row divider space-evenly'>
-        <span className='text-center text-light'>©Copyright 2022 - All rights reserved - Lautaro Alessandro - Ignacio Giusti</span>
+        <span className='text-center text-light'>{year} - All rights reserved - Lautaro Alessandro - Ignacio Giusti</span>
         <div>
           <a href='#' target="_blank"><img className='Footer-Socials' src='img/socials/instagram.png' alt='...' /></a>
           <a href='#' target="_blank"><img className='Footer-Socials' src='img/socials/whatsapp.png' alt='...' /></a>
