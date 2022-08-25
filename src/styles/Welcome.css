@@ -18,6 +18,10 @@
 .h1-gap {
   gap: 15px;
 }
+.h1-logo {
+  height: 150px;
+  width: 150px;
+}
 
 .padding-top {
   background-color: black;
