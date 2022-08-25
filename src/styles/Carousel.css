@@ -6,7 +6,8 @@
 }
 
 .Carousel-Title {
-    font-size: 4.5vh;
+    padding-top: 15px;
+    font-size: 3.5vh;
 }
 
 .Carousel-slide {
