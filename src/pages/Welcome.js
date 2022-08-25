@@ -9,7 +9,10 @@ export default function Welcome() {
   return (
     <>
       <div className='Main col space-evenly text-effect'>
-        <h1 className='Welcome-Title text-center'>{titleMy}<span className='Title-Tinerary'>{titleTinerary}</span></h1>
+        <div className='row justify-center h1-gap'>
+          <img className='img-user' src="/img/logo.png" alt="logo" />
+          <h1 className='Welcome-Title text-center'>{titleMy}<span className='Title-Tinerary'>{titleTinerary}</span></h1>
+        </div>
         <p className='Welcome-p text-light text-center'>Find your perfect trip, designed by insiders who know and love their cities!</p>
         <CallToAction linkTo='cities' />
       </div>

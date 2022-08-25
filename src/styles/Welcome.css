@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins';
 }
 
 .Main {
@@ -11,6 +13,10 @@
   height: 90vh;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+.h1-gap {
+  gap: 15px;
 }
 
 .padding-top {
@@ -98,9 +104,10 @@
 }
 
 .Welcome-Title {
-  font-size: 6.5vh;
+  font-size: 6vh;
   color: whitesmoke;
   text-shadow: 2px 2px 5px black;
+  font-weight: 800;
 }
 
 .Title-Tinerary {
