@@ -59,7 +59,7 @@ export default function Carousel(props) {
   const carouselSlide = (itemsMap) => (
     <div className='City-container'>
       <img className="City-img" src={itemsMap.url} />
-      <h3 className='City-text text-center'>{itemsMap.city} - {itemsMap.country}</h3>
+      <h3 className='City-text text-center'>{itemsMap.city}</h3>
     </div>
   )
 
