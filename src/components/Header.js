@@ -13,7 +13,6 @@ const navLinks = (page) => <LinkRouter className='navbar-links menu-hover' to={p
 
 export default function Header() {
 
-  console.log("header")
   const [open, setOpen] = useState(false)
 
   const handleOpenMenu = () => {
