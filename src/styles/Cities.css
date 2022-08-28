@@ -1,20 +1,22 @@
+.Main-Cities {
+    background: url(/public/img/travel-bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-bottom: 20px;
+}
+
 .citiesPageContainer {
     display: flex;
     flex-flow: wrap;
     justify-content: center;
     gap: 20px;
-    padding: 20px 0;
-    padding-top: 3rem;
-    background: url(/public/img/travel-bg.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 .City-container {
     padding: 15px;
     display: flex;
     flex-flow: column;
-    width: 98%;
+    width: 90%;
     background-color: whitesmoke;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25);
 }
@@ -29,19 +31,29 @@
     font-family: 'Permanent Marker';
     font-size: x-large;
 }
-.Search-Cities{
+
+.Search-Cities {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 7rem;
-    background-color: grey;
+    height: 10vh;
 }
-input{
-    background-color: rgba(255, 255, 255, 0.686);
+
+.Input-Cities {
+    background-color: whitesmoke;
     border-radius: 5px;
     height: 2rem;
     width: 20rem;
+    max-width: 90%;
+    border: none;
+    transition: ease-in-out 0.1s;
 }
+
+.Input-Cities:hover {
+    background-color: white;
+}
+
+
 @media (min-width: 426px) {
     .City-container {
         width: 50vh;
