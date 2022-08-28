@@ -119,3 +119,8 @@
 .Title-Tinerary {
   color: orange;
 }
+
+.decoration-none{
+  text-decoration: none;
+  color: black;
+}
