@@ -1,24 +1,45 @@
-.main-NewCity{
+.Main-NewCity {
+    height: 90vh;
     padding: 1rem 0 1rem 0;
-    background-color: black;
+    background: url(/public/img/travel-bg.jpg);
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: grey;
+}
+
+.Form-NewCity {
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 3px;
+    gap: 15px;
 }
-.Input-NewCity{
-    padding: 1rem 0 1rem 0;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 3px;
+
+.Input-NewCity {
+    background-color: whitesmoke;
+    border-radius: 5px;
+    height: 2rem;
+    width: 20rem;
+    max-width: 90%;
+    border: none;
+    transition: ease-in-out 0.1s;
 }
-.button-NewCity{
-    background-color: gray;
-    padding: .8rem 2rem;
+.Input-NewCity:hover{
+   background-color: white;
 }
-.button-NewCity:hover{
+
+.button-NewCity {
+    background-color: lightgrey;
+    border-radius: 5px;
+    height: 2rem;
+    width: 20rem;
+    max-width: 90%;
+    font-size: medium;
+    transition: ease-in-out 0.2s;
+    border: none;
+}
+
+.button-NewCity:hover {
     color: whitesmoke;
     background-color: rebeccapurple;
 }

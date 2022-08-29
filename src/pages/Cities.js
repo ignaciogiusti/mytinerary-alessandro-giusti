@@ -1,14 +1,16 @@
-import React from 'react'
-import CityCard from '../components/CityCard'
+import CityCard from '../components/CityCard';
+import { Link as LinkRouter } from 'react-router-dom';
 
 
 export default function Cities() {
     return (
         <>
-            <div className='Search-Cities'>
-                <input type="text" name="hola" placeholder=' Search by city...' />
+            <div className='Main-Cities'>
+                <div className='Search-Cities'>
+                    <input className='Input-Cities' type="text" name="" placeholder=' Search by city...' />
+                </div>
+                <LinkRouter to='/*' className='decoration-none'><CityCard /></LinkRouter>
             </div>
-            <CityCard />
         </>
     )
 }
