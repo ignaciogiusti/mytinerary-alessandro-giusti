@@ -1,6 +1,8 @@
 import '../styles/Carousel.css'
 import SlideArrow from './Carousel/SlideArrow';
-import { useEffect, useState } from 'react'
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+/* import CityCard from './CityCard'; */
 
 export default function Carousel(props) {
 
@@ -11,8 +13,7 @@ export default function Carousel(props) {
   const [intervalTime, setIntervalTime] = useState();
   const interval = props.interval * 1000;
 
-
-  const carouselItemsContent = [
+  /* const carouselItemsContent = [
     { url: "/img/buenosAires.jpg", city: "Buenos Aires", country: "Argentina" },
     { url: "/img/rome.jpg", city: "Rome", country: "Italy" },
     { url: "/img/cancun.jpg", city: "Cancun", country: "Mexico" },
@@ -25,7 +26,12 @@ export default function Carousel(props) {
     { url: "/img/RioDJ.png", city: "Rio De Janeiro", country: "Brasil" },
     { url: "/img/Shanghai.jpg", city: "Shanghai", country: "China" },
     { url: "/img/Zermatt-Switzerland.jpg", city: "Zermatt", country: "Switzerland" },
-  ];
+  ]; */
+
+    useEffect(() => {
+        axios.get('http://localhost:4000/cities/') 
+            .then(response => setCities(response.data))
+    }, [])
 
   useEffect(() => {
     let slideTimer = setInterval(function () {
@@ -56,12 +62,13 @@ export default function Carousel(props) {
     }
   }
 
-  const carouselSlide = (itemsMap) => (
+  const [cities, setCities] = useState([])
+  const cityCard = (itemsMap) => (
     <div className='City-container'>
-      <img className="City-img" src={itemsMap.url} />
-      <h3 className='City-text text-center'>{itemsMap.city}</h3>
+        <img className="City-img" src={itemsMap.photo} />
+        <h3 className='City-text text-center'>{itemsMap.city}</h3>
     </div>
-  )
+)
 
   return (
     <>
@@ -71,7 +78,7 @@ export default function Carousel(props) {
           <SlideArrow icon={<img className='Arrow-img' src='img/arrow-left-light.png' />} click={previousSlide} />
           <div>
             <div className='Carousel-slide justify-center'>
-              {carouselItemsContent.slice(rangeItemStart, rangeItemEnd).map(carouselSlide)}
+              {cities.slice(rangeItemStart, rangeItemEnd).map(cityCard)}
             </div>
           </div>
           <SlideArrow icon={<img className='Arrow-img' src='img/arrow-right-light.png' />} click={nextSlide} />

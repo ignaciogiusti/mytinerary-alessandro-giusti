@@ -1,5 +1,4 @@
 import CityCard from '../components/CityCard';
-import { Link as LinkRouter } from 'react-router-dom';
 
 
 export default function Cities() {
@@ -9,7 +8,7 @@ export default function Cities() {
                 <div className='Search-Cities'>
                     <input className='Input-Cities' type="text" name="" placeholder=' Search by city...' />
                 </div>
-                <LinkRouter to='/*' className='decoration-none'><CityCard /></LinkRouter>
+                <CityCard />
             </div>
         </>
     )
