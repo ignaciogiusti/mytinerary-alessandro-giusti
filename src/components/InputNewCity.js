@@ -4,7 +4,9 @@ import '../styles/NewCity.css';
 const form = [
     { name: ' City:', type: 'text', className: 'Input-NewCity' },
     { name: ' Country:', type: 'text', className: 'Input-NewCity' },
+    { name: ' Description:', type: 'string', className: 'Input-NewCity' },
     { name: ' Population:', type: 'number', className: 'Input-NewCity' },
+    { name: ' Foundation:', type: 'date', className: 'Input-NewCity' },
     { name: ' Photo URL:', type: 'url', className: 'Input-NewCity' },
     { type: 'submit', className: 'button-NewCity', value: 'Send' },
 ]
