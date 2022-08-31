@@ -25,7 +25,7 @@ export default function Cities() {
     const cityCard = (itemsMap) => (
         <div className='City-container'>
             <img className="City-img" src={itemsMap.photo} />
-            <h3 className='City-text text-center'>{itemsMap.city}</h3>
+            <LinkRouter to='/citydetails' className='decoration-none'><h3 className='City-text text-center'>{itemsMap.city}</h3></LinkRouter>
         </div>
     )
         useEffect(() => {
@@ -35,11 +35,9 @@ export default function Cities() {
 
     return (
         <>
-            <div className='citiesPageContainer'>
-            <LinkRouter to='/citydetails' className='decoration-none'>{
+            <div className='citiesPageContainer'>{
                     cities.map(cityCard)
-                }</LinkRouter>
-            </div>
+                }</div>
         </>
     )
 }
