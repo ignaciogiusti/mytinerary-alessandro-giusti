@@ -3,6 +3,7 @@ import Welcome from '../pages/Welcome';
 import Footer from '../components/Footer';
 import UnderConstruction from '../pages/UnderConstruction';
 import Cities from '../pages/Cities';
+import CityDetails from '../pages/CityDetails';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ScrollToTop from '../components/ScrollToTop';
 import NewCity from '../pages/NewCity';
@@ -23,6 +24,7 @@ export default function WebsiteLayout(props) {
                     <Route path='/cities' element={<Cities />} />
                     <Route path='*' element={<UnderConstruction />} />
                     <Route path='/newcity' element={<NewCity />} />
+                    <Route path='/citydetails' element={<CityDetails />} />
                 </Routes>
                 <Footer />
             </BrowserRouter>
