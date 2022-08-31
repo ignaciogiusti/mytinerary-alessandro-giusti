@@ -1,6 +1,7 @@
 import '../styles/Cities.css';
 import axios from 'axios'
 import { useEffect, useState } from 'react';
+import { Link as LinkRouter } from 'react-router-dom';
 
 
 export default function Cities() {
@@ -35,9 +36,9 @@ export default function Cities() {
     return (
         <>
             <div className='citiesPageContainer'>
-                {
+            <LinkRouter to='/citydetails' className='decoration-none'>{
                     cities.map(cityCard)
-                }
+                }</LinkRouter>
             </div>
         </>
     )
