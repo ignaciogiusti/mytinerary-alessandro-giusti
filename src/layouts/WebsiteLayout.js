@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ScrollToTop from '../components/ScrollToTop';
 import NewCity from '../pages/NewCity';
 import Bar from '../components/Bar';
+import Carousel from '../components/Carousel';
 
 
 export default function WebsiteLayout(props) {
@@ -25,6 +26,7 @@ export default function WebsiteLayout(props) {
                     <Route path='*' element={<UnderConstruction />} />
                     <Route path='/newcity' element={<NewCity />} />
                     <Route path='/citydetails/:id' element={<CityDetails />} />
+                    <Route path='/citydetails/:id' element={<Carousel />} />
                 </Routes>
                 <Footer />
             </BrowserRouter>
