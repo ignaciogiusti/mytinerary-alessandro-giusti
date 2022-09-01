@@ -24,7 +24,7 @@ export default function WebsiteLayout(props) {
                     <Route path='/cities' element={<Cities />} />
                     <Route path='*' element={<UnderConstruction />} />
                     <Route path='/newcity' element={<NewCity />} />
-                    <Route path='/citydetails' element={<CityDetails />} />
+                    <Route path='/citydetails/:id' element={<CityDetails />} />
                 </Routes>
                 <Footer />
             </BrowserRouter>
