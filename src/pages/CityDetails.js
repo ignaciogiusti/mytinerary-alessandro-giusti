@@ -37,7 +37,7 @@ export default function CityDetails() {
         <img className="City-img" src={city.photo} />
           <h3 className='text-center Details-text'>{city.city} - {city.country}</h3>
           <p>{city.description}</p>
-          <p><span className='text-bold'>Founded:</span> {city.foundation} {year}</p>
+          <p><span className='text-bold'>Founded:</span> {city.foundation}</p>
           <p><span className='text-bold'>Population:</span> {city.population}</p>
         </div>
        { <button className='backbutton' onClick={() => navigate(-1)}>Back to Cities</button>}
