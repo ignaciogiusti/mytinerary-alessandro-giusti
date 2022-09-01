@@ -30,7 +30,7 @@ export default function Cities() {
                 </div>
                 <div className='citiesPageContainer'>
                 {cities?.map((city) => (
-                    <LinkRouter key={city._id} to={`/citydetails/${city._id}`}>
+                    <LinkRouter className='decoration-none' key={city._id} to={`/citydetails/${city._id}`}>
                         <div className='City-container'>
                             <img className="City-img" src={city.photo} />
                             <h3 className='City-text text-center'>{city.city}</h3>

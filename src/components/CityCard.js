@@ -6,13 +6,6 @@ import { Link as LinkRouter } from 'react-router-dom';
 
 export default function Cities() {
     const [cities, setCities] = useState([])
-
-    // const cityCard = (itemsMap) => (
-    //     <div className='City-container'>
-    //         <img className="City-img" src={itemsMap.photo} />
-    //         <h3 className='City-text text-center'>{itemsMap.city}</h3>
-    //     </div>
-    // )
     useEffect(() => {
         axios.get('http://localhost:4000/cities/')
             .then(response => setCities(response.data))
@@ -29,9 +22,6 @@ export default function Cities() {
                         </div>
                     </LinkRouter>
                 ))}
-                {/* <LinkRouter  to={`/city/${city._id}`} className='decoration-none'>{
-                    cities.map(cityCard)
-                }</LinkRouter> */}
             </div>
         </>
     )
