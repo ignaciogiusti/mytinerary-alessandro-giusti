@@ -1,0 +1,41 @@
+.Main-Details {
+    background: url(/public/img/travel-bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 90vh;
+    padding: 20px 0;
+    gap: 20px;
+}
+
+.Details-Container {
+    background-color: whitesmoke;
+    padding: 15px;
+    gap: 15px;
+    width: 90%;
+}
+
+.Details-text {
+    font-family: 'Permanent Marker';
+    font-size: x-large;
+}
+
+.backbutton {
+    background-color: whitesmoke;
+    border-radius: 5px;
+    height: 3rem;
+    width: 90%;
+    font-size: large;
+}
+
+.text-bold{
+    font-weight: bold;
+}
+
+@media (min-width: 769px) {
+    .backbutton{
+        width: 25%;
+    }
+    .Details-Container {
+        width: 50%;
+    }
+}
