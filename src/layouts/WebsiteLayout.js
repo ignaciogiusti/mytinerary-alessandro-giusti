@@ -7,6 +7,7 @@ import CityDetails from '../pages/CityDetails';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ScrollToTop from '../components/ScrollToTop';
 import NewCity from '../pages/NewCity';
+import EditCity from '../pages/EditCity'
 import Bar from '../components/Bar';
 import Carousel from '../components/Carousel';
 
@@ -18,13 +19,13 @@ export default function WebsiteLayout(props) {
                 <ScrollToTop />
                 <Header />
                 <Bar/>
-                {/* <Nav/> */}
                 {/* { props.children } */}
                 <Routes>
                     <Route path='/' element={<Welcome />} />
                     <Route path='/cities' element={<Cities />} />
                     <Route path='*' element={<UnderConstruction />} />
                     <Route path='/newcity' element={<NewCity />} />
+                    <Route path='/editcity' element={<EditCity />} />
                     <Route path='/citydetails/:id' element={<CityDetails />} />
                     <Route path='/citydetails/:id' element={<Carousel />} />
                 </Routes>
