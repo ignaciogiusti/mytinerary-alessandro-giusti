@@ -3,6 +3,7 @@ import SlideArrow from './Carousel/SlideArrow';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 /* import CityCard from './CityCard'; */
+import { Link as LinkRouter } from 'react-router-dom';
 
 export default function Carousel(props) {
 
@@ -64,10 +65,12 @@ export default function Carousel(props) {
 
   const [cities, setCities] = useState([])
   const cityCard = (itemsMap) => (
+    <LinkRouter className='decoration-none' key={itemsMap._id} to={`/citydetails/${itemsMap._id}`}>
     <div className='City-container'>
       <img className="City-img" src={itemsMap.photo} />
       <h3 className='City-text text-center'>{itemsMap.city}</h3>
     </div>
+    </LinkRouter>
   )
 
   return (
