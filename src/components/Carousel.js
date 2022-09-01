@@ -28,10 +28,10 @@ export default function Carousel(props) {
     { url: "/img/Zermatt-Switzerland.jpg", city: "Zermatt", country: "Switzerland" },
   ]; */
 
-    useEffect(() => {
-        axios.get('http://localhost:4000/cities/') 
-            .then(response => setCities(response.data))
-    }, [])
+  useEffect(() => {
+    axios.get('http://localhost:4000/cities/')
+      .then(response => setCities(response.data.response))
+  }, [])
 
   useEffect(() => {
     let slideTimer = setInterval(function () {
@@ -65,10 +65,10 @@ export default function Carousel(props) {
   const [cities, setCities] = useState([])
   const cityCard = (itemsMap) => (
     <div className='City-container'>
-        <img className="City-img" src={itemsMap.photo} />
-        <h3 className='City-text text-center'>{itemsMap.city}</h3>
+      <img className="City-img" src={itemsMap.photo} />
+      <h3 className='City-text text-center'>{itemsMap.city}</h3>
     </div>
-)
+  )
 
   return (
     <>
