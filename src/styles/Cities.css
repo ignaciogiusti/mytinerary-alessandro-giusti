@@ -16,14 +16,16 @@
 .City-container {
     padding: 15px;
     display: flex;
+    max-width: 96%;
     flex-flow: column;
-    width: 90%;
     background-color: whitesmoke;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25);
 }
 
 .City-img {
     height: 400px;
+    width: 400px;
+    max-width: 100%;
     object-fit: cover;
 }
 

@@ -16,8 +16,8 @@ export default function EditCity() {
             <div className="Main-NewCity">
                 <form className="Form-NewCity">
                     <h1 className="text-light">Edit a City here!</h1>
-                    <label className="text-light col">Select a City
-                    <select className='Input-NewCity'>
+                    <label className="text-light col text-indent">Select a City
+                    <select className='Input-NewCity flex-center'>
                         {selectOption.map(options)}
                         </select>
                     </label>
