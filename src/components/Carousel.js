@@ -65,7 +65,7 @@ export default function Carousel(props) {
 
   const [cities, setCities] = useState([])
   const cityCard = (itemsMap) => (
-    <LinkRouter className='decoration-none' key={itemsMap._id} to={`/citydetails/${itemsMap._id}`}>
+    <LinkRouter className='decoration-none flex-center' key={itemsMap._id} to={`/citydetails/${itemsMap._id}`}>
     <div className='City-container'>
       <img className="City-img" src={itemsMap.photo} />
       <h3 className='City-text text-center'>{itemsMap.city}</h3>
