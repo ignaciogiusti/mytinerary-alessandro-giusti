@@ -2,14 +2,22 @@ import '../styles/Cities.css';
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 import { Link as LinkRouter } from 'react-router-dom';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchFromServer } from '../features/citiesSlice';
 
 export default function Cities() {
-    const [cities, setCities] = useState([])
+    // const [cities, setCities] = useState([])
+    // useEffect(() => {
+    //     axios.get('http://localhost:4000/cities/')
+    //         .then(response => setCities(response.data))
+    // }, [])
+
+    let cities = useSelector ( state => state.cities.cities ) //state, reducer y valor dentro del state
+    let dispatch = useDispatch ()
+
     useEffect(() => {
-        axios.get('http://localhost:4000/cities/')
-            .then(response => setCities(response.data))
-    }, [])
+        dispatch(fetchFromServer())
+    },[])
 
     return (
         <>
