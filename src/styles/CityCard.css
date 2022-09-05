@@ -1,0 +1,39 @@
+.City-Card-Container {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    gap: 20px;
+    background-color: grey;
+}
+.City-Card {
+    padding: 15px;
+    display: flex;
+    flex-flow: column;
+    width: 90%;
+    background-color: whitesmoke;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25);
+}
+
+.Content-hover {
+    visibility: hidden;
+    border-top: 4px solid black;
+    margin-top: 15px;
+    padding-top: 15px;
+    transition: ease-in-out 0.5s;
+}
+
+.City-Card:hover  .Content-hover{
+    visibility : visible;
+}
+
+@media (min-width: 426px) {
+    .City-Card {
+        width: 50vh;
+    }
+}
+
+@media (min-width: 769px) {
+    .City-Card-Container {
+        justify-content: center;
+    }
+}

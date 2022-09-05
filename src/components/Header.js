@@ -5,7 +5,8 @@ import { Link as LinkRouter } from 'react-router-dom';
 const pages = [
   { name: 'Home', to: '/' },
   { name: 'Cities', to: '/cities' },
-  { name: 'NewCity', to: '/newcity' }
+  { name: 'NewCity', to: '/newcity' },
+  { name: 'EditCity', to: '/editcity'}
 ]
 
 const navLinks = (page) => <LinkRouter className='navbar-links menu-hover' to={page.to} key={page.name}>{page.name}</LinkRouter>
@@ -13,7 +14,6 @@ const navLinks = (page) => <LinkRouter className='navbar-links menu-hover' to={p
 
 export default function Header() {
 
-  console.log("header")
   const [open, setOpen] = useState(false)
 
   const handleOpenMenu = () => {
@@ -35,13 +35,13 @@ export default function Header() {
           }
         </div>
       </button>
-      <LinkRouter  to='/'><img className='img-user' src="/img/logo.png" alt="logo" /></LinkRouter>
+      <LinkRouter  to='/'><img className='img-header' src="/img/logo.png" alt="logo" /></LinkRouter>
       <div className='hide-nav-desktop'>
         <div className='row row-menu'>
           {pages.map(navLinks)}
         </div>
       </div>
-      <img className='img-user' src="/img/usuario.png" alt="avatar" />
+      <img className='img-header' src="/img/usuario.png" alt="avatar" />
     </div>
   )
 }

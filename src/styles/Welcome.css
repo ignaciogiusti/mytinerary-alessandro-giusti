@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
 
 * {
@@ -117,4 +118,23 @@
 
 .Title-Tinerary {
   color: orange;
+}
+
+.decoration-none{
+  text-decoration: none;
+  color: black;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.text-indent {
+  text-indent: 1em;
 }
