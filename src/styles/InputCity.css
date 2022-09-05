@@ -7,7 +7,9 @@
     background-attachment: fixed;
     background-color: grey;
 }
-
+textarea {
+    resize: none;
+}
 .Form-NewCity {
     display: flex;
     align-items: center;
