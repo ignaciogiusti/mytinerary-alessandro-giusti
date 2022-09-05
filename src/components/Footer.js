@@ -17,23 +17,25 @@ export default function Footer() {
       behavior: 'smooth'
     });
   }
+  const fullYear = new Date ();
+  const year = (fullYear.getFullYear())
 
   return (
     <div className='Footer'>
       <div className='Footer-container row space-around'>
-        <div className='col'>
+        <div className='col Footer-p'>
           <h5 className='text-light Footer-h5'>Sitemap</h5>
           { pages.map(navLinks) }
         </div>
         <div className='col'>
           <h5 className='text-light Footer-h5'>Contact</h5>
-          <span className='text-light'>+54 911 9999-9999</span>
-          <span className='text-light'>Fake Street 123</span>
+          <span className='text-light Footer-p'>+54 911 9999-9999</span>
+          <span className='text-light Footer-p'>Fake Street 123</span>
         </div>
           <button className='Footer-arrow-button' onClick={scrollUp}><img src='img/arrow-up-light.png' className='Footer-arrow-img' /></button>
       </div>
       <div className='Footer-container row divider space-evenly'>
-        <span className='text-center text-light'>©Copyright 2022 - All rights reserved - Lautaro Alessandro - Ignacio Giusti</span>
+        <span className='text-center text-light'>{year} - All rights reserved - Lautaro Alessandro - Ignacio Giusti</span>
         <div>
           <a href='#' target="_blank"><img className='Footer-Socials' src='img/socials/instagram.png' alt='...' /></a>
           <a href='#' target="_blank"><img className='Footer-Socials' src='img/socials/whatsapp.png' alt='...' /></a>

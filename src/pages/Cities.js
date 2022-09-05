@@ -1,42 +1,44 @@
-import '../styles/Cities.css'
+import CityCard from '../components/CityCard';
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
+import { Link as LinkRouter } from 'react-router-dom';
+
+// El onChange es una función de tipo "escuchador" que se va a actualizar cada vez que el input cambie
 
 export default function Cities() {
+    const [cities, setCities] = useState([])
+    const [search, setSearch] = useState("")
 
+    useEffect(() => {
+        getAllCities()
+    }, [search])
 
-    const cities = [
-        { url: "/img/buenosAires.jpg", city: "Buenos Aires", country: "Argentina" },
-        { url: "/img/rome.jpg", city: "Rome", country: "Italy" },
-        { url: "/img/cancun.jpg", city: "Cancun", country: "Mexico" },
-        { url: "/img/capetown.jpg", city: "Cape Town", country: "South Africa" },
-        { url: "/img/edinburgh.jpg", city: "Edinburgh", country: "Scotland" },
-        { url: "/img/helsinki.jpg", city: "Helsinki", country: "Finland" },
-        { url: "/img/madrid.jpg", city: "Madrid", country: "Spain" },
-        { url: "/img/milan.jpg", city: "Milan", country: "Italy" },
-        { url: "/img/paris.jpg", city: "Paris", country: "France" },
-        { url: "/img/RioDJ.png", city: "Rio De Janeiro", country: "Brasil" },
-        { url: "/img/Shanghai.jpg", city: "Shanghai", country: "China" },
-        { url: "/img/Zermatt-Switzerland.jpg", city: "Zermatt", country: "Switzerland" },
-    ];
-    
-        const imgCitiesContainerView = (itemsMap) => (
-            <div className='City-container'>
-            <img className="City-img" src={itemsMap.url} />
-            <h3 className='City-text text-center'>{itemsMap.city} - {itemsMap.country}</h3>
-        </div>
-        )
-        
-        
-        
-        return (
-            <>
+    const getAllCities = async () => {
+        try {
+            const response = await axios.get(`http://localhost:4000/cities/?search=${search}`)
+            setCities(response.data.response)
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
+
+    return (
+        <>
+            <div className='Main-Cities'>
                 <div className='Search-Cities'>
-                <input type="text" name="hola" placeholder=' Search by city...' />
+                    <input className='Input-Cities' type="text" name="" placeholder=' Search by city...' onChange={(event) => {setSearch(event.target.value)}} />
                 </div>
-                    <div className='citiesPageContainer'>
-                        { 
-                            cities.map(imgCitiesContainerView) 
-                        }
-                    </div>
-            </>
+                <div className='citiesPageContainer'>
+                {cities?.map((city) => (
+                    <LinkRouter className='decoration-none flex-center' key={city._id} to={`/citydetails/${city._id}`}>
+                        <div className='City-container'>
+                            <img className="City-img" src={city.photo} />
+                            <h3 className='City-text text-center'>{city.city}</h3>
+                        </div>
+                    </LinkRouter>
+                ))}
+            </div>
+            </div>
+        </>
     )
 }
