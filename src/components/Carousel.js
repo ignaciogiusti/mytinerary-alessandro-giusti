@@ -41,7 +41,7 @@ export default function Carousel(props) {
 
     setIntervalTime(slideTimer)
 
-    return () => clearInterval(intervalTime);
+    return clearInterval(intervalTime);
   }, [rangeItemStart])
 
   function previousSlide() {
