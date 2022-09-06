@@ -1,3 +1,4 @@
+import urlAPI from '../API';
 import '../styles/CityDetails.css'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
@@ -12,7 +13,7 @@ export default function CityDetails() {
 
   const getCity = async () => {
     try {
-      const response = await axios.get(`http://localhost:4000/cities/${id}`)
+      const response = await axios.get(urlAPI + `/cities/${id}`)
 
       if (response.data.success) {
         return setCity(response.data.response)

@@ -1,3 +1,4 @@
+import urlAPI from '../API';
 import '../styles/Carousel.css'
 import SlideArrow from './Carousel/SlideArrow';
 import axios from 'axios';
@@ -30,7 +31,7 @@ export default function Carousel(props) {
   ]; */
 
   useEffect(() => {
-    axios.get('http://localhost:4000/cities/')
+    axios.get(urlAPI + '/cities/')
       .then(response => setCities(response.data.response))
   }, [])
 

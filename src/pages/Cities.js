@@ -1,3 +1,4 @@
+import urlAPI from '../API';
 import CityCard from '../components/CityCard';
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
@@ -15,7 +16,7 @@ export default function Cities() {
 
     const getAllCities = async () => {
         try {
-            const response = await axios.get(`http://localhost:4000/cities/?search=${search}`)
+            const response = await axios.get(urlAPI + `/cities/?search=${search}`)
             setCities(response.data.response)
         } catch (error) {
             console.log(error.message)
