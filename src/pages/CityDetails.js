@@ -30,7 +30,6 @@ export default function CityDetails() {
     getCity()
   }, [])
 
-
   return (
     <>
       <div className='Main-Details col justify-center space-evenly'>
@@ -41,7 +40,7 @@ export default function CityDetails() {
           <p><span className='text-bold'>Founded:</span> {city.foundation}</p>
           <p><span className='text-bold'>Population:</span> {city.population}</p>
         </div>
-       { <button className='backbutton' onClick={() => navigate(-1)}>Back to Cities</button>}
+        { <button className='backbutton' onClick={() => navigate(-1)}>Back to Cities</button>}
       </div>
     </>
   )
