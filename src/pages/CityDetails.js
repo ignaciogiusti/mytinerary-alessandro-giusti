@@ -3,6 +3,7 @@ import '../styles/CityDetails.css'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
+import Itinerary from '../components/Itinerary';
 
 
 export default function CityDetails() {
@@ -40,6 +41,7 @@ export default function CityDetails() {
           <p><span className='text-bold'>Founded:</span> {city.foundation}</p>
           <p><span className='text-bold'>Population:</span> {city.population}</p>
         </div>
+        <Itinerary />
         { <button className='backbutton' onClick={() => navigate(-1)}>Back to Cities</button>}
       </div>
     </>
