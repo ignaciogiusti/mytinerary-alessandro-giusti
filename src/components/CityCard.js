@@ -1,9 +1,10 @@
 import '../styles/Cities.css';
-import axios from 'axios'
-import { useEffect, useState } from 'react';
+// import axios from 'axios'
+// import { useEffect, useState } from 'react';
 import { Link as LinkRouter } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchFromServer } from '../features/citiesSlice';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { fetchFromServer } from '../features/citiesSlice';
+import { useGetAllCitiesQuery } from '../features/citiesAPI';
 
 export default function Cities() {
     // const [cities, setCities] = useState([])
@@ -11,13 +12,17 @@ export default function Cities() {
     //     axios.get('http://localhost:4000/cities/')
     //         .then(response => setCities(response.data))
     // }, [])
+    // "start": "serve -s build",
+    // "heroku-postbuild": 
 
-    let cities = useSelector ( state => state.cities.cities ) //state, reducer y valor dentro del state
-    let dispatch = useDispatch ()
-
-    useEffect(() => {
-        dispatch(fetchFromServer())
-    },[])
+    const { 
+        data: cities,
+        error,
+        isLoading,
+        isSuccess,
+        isFailed
+    } = useGetAllCitiesQuery()
+    
 
     return (
         <>
