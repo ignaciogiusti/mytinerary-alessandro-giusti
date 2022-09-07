@@ -25,6 +25,12 @@
     height: 3rem;
     width: 90%;
     font-size: large;
+    transition: ease-in-out 0.2s;
+    cursor: pointer;
+}
+.backbutton:hover {
+    background-color: rebeccapurple;
+    color: whitesmoke;
 }
 
 .text-bold{
@@ -37,5 +43,6 @@
     }
     .Details-Container {
         width: 50%;
+        width: 850px;
     }
 }
