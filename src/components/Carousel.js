@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // import urlAPI from '../API';
+=======
+import urlAPI from '../API';
+>>>>>>> 8a4cf41b3d52e394cf2a9131e3dfcad0ea37eebd
 import '../styles/Carousel.css'
 import SlideArrow from './Carousel/SlideArrow';
 import axios from 'axios';
