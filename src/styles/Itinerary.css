@@ -35,7 +35,8 @@
 
 @media (min-width: 769px) {
     .Itinerary-Card {
-        width: 50%;
+        max-width: 50%;
+        width: 850px;
     }
 }
 @media (max-width: 425px) {
