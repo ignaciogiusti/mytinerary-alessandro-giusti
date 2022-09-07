@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import axios from "axios"
+// import CityCard from '../components/CityCard'
 
 export const citiesSlice = createSlice({
     name: 'cities',
