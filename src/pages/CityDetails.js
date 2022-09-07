@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
 import Itinerary from '../components/Itinerary';
+import Activities from '../components/Activities'
 
 
 export default function CityDetails() {
