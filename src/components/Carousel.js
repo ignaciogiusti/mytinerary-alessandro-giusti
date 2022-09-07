@@ -1,9 +1,11 @@
+// import urlAPI from '../API';
 import '../styles/Carousel.css'
 import SlideArrow from './Carousel/SlideArrow';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 /* import CityCard from './CityCard'; */
 import { Link as LinkRouter } from 'react-router-dom';
+import { useGetAllCitiesQuery } from '../features/citiesAPI';
 
 export default function Carousel(props) {
 
@@ -29,10 +31,14 @@ export default function Carousel(props) {
     { url: "/img/Zermatt-Switzerland.jpg", city: "Zermatt", country: "Switzerland" },
   ]; */
 
-  useEffect(() => {
-    axios.get('http://localhost:4000/cities/')
-      .then(response => setCities(response.data.response))
-  }, [])
+  // useEffect(() => {
+  //   axios.get(urlAPI + '/cities/')
+  //     .then(response => setCities(response.data.response))
+  // }, [])
+
+      const { 
+        data: cities
+    } = useGetAllCitiesQuery()
 
   useEffect(() => {
     let slideTimer = setInterval(function () {
@@ -63,7 +69,7 @@ export default function Carousel(props) {
     }
   }
 
-  const [cities, setCities] = useState([])
+  // const [cities, setCities] = useState([])
   const cityCard = (itemsMap) => (
     <LinkRouter className='decoration-none flex-center' key={itemsMap._id} to={`/citydetails/${itemsMap._id}`}>
     <div className='City-container'>
@@ -81,7 +87,7 @@ export default function Carousel(props) {
           <SlideArrow icon={<img className='Arrow-img' src='img/arrow-left-light.png' />} click={previousSlide} />
           <div>
             <div className='Carousel-slide justify-center'>
-              {cities.slice(rangeItemStart, rangeItemEnd).map(cityCard)}
+              {cities?.response?.slice(rangeItemStart, rangeItemEnd).map(cityCard)}
             </div>
           </div>
           <SlideArrow icon={<img className='Arrow-img' src='img/arrow-right-light.png' />} click={nextSlide} />
