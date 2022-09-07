@@ -11,7 +11,7 @@ export const citiesSlice = createSlice({
     reducers: {
         fetchFromServer: (state) => {
 
-            state.cities = data
+            state.cities = 0
             
         },
 
