@@ -1,10 +1,19 @@
 
 
-.Itinerary-Container {
+.Itinerary-Card {
     background-color: whitesmoke;
     padding: 15px;
     gap: 15px;
     width: 90%;
+}
+
+.Itinerary-Container {
+    width: 100%;
+}
+
+.Itinerary-Title {
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
 }
 
 .Itinerary-Content {
@@ -13,8 +22,9 @@
     gap: 15px;
 }
 
-.User-Container {
-    width: 200px;
+.Itinerary-Subcontainer {
+    width: 85%;
+    gap: 10px;
 }
 
 .User-Img {
@@ -24,13 +34,13 @@
 }
 
 @media (min-width: 769px) {
-    .Itinerary-Container {
+    .Itinerary-Card {
         width: 50%;
     }
 }
 @media (max-width: 425px) {
     .Itinerary-Content {
-        min-width: 10rem;
         flex-flow: column;
+        gap: 10px;
     }
  }
