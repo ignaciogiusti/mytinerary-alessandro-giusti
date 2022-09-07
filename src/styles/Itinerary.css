@@ -1,0 +1,36 @@
+
+
+.Itinerary-Container {
+    background-color: whitesmoke;
+    padding: 15px;
+    gap: 15px;
+    width: 90%;
+}
+
+.Itinerary-Content {
+    display: flex;
+    flex-flow: row;
+    gap: 15px;
+}
+
+.User-Container {
+    width: 200px;
+}
+
+.User-Img {
+    border-radius: 360px;
+    width: 75px;
+    max-width: 100px;
+}
+
+@media (min-width: 769px) {
+    .Itinerary-Container {
+        width: 50%;
+    }
+}
+@media (max-width: 425px) {
+    .Itinerary-Content {
+        min-width: 10rem;
+        flex-flow: column;
+    }
+ }
