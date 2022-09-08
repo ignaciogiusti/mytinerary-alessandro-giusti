@@ -11,8 +11,7 @@
     width: 100%;
 }
 
-.Itinerary-Title {
-    padding-bottom: 10px;
+.Itinerary-Divider {
     border-bottom: 2px solid black;
 }
 
