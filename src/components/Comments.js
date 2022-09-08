@@ -1,4 +1,5 @@
 import { useState } from "react"
+import '../styles/Comments.css'
 // import axios from "axios"
 
 
@@ -35,20 +36,22 @@ export default function Comments() {
     return (
         <>
             {/* {comments.map((comment) => ( */}
-                <div className='Itinerary-Card col'>
-                    <button className='backbutton' onClick={handleComments}>Comments</button>
-                    {comments && <h1>Show Commentaries</h1>}
-                    {comments && <h4>Ricardo fort:</h4>}
+            <div className='col'>
+                <button className='Comment-Button' onClick={handleComments}>Comments</button>
+                {comments && <h4 className="text-center">Ricardo fort:</h4>}
+                <div className="row justify-center Comment-Gap-X Comment-Gap-Y">
                     {comments && <img className='User-Img' src="https://media.airedesantafe.com.ar/p/3c8183070fac480c1714616addb05555/adjuntos/268/imagenes/003/424/0003424036/ricardo-fort-que-murio-el-empresario-mediatico.png" alt="ricky fort" />}
                     {comments && <p>Woow incredible </p>}
-                    <div>
-                        {comments && <h1>Show Commentaries</h1>}
-                        {comments && <h4>Moria Casan:</h4>}
-                        {comments && <img className='User-Img' src="https://m.media-amazon.com/images/M/MV5BYjM0MmQzNzItZmE3NC00YWVmLWI2ZmItMWEyNWNhYTVmNjQwXkEyXkFqcGdeQXVyNjU0ODkwMTU@._V1_.jpg" alt="ricky fort" />}
-                        {comments && <p>Amazing page, keep going!</p>}
-                    </div>
                 </div>
-                {/* ))} */}
+                    {comments && <div className="Comment-Divider"></div>}
+                {comments && <h4 className="text-center">Moria Casan:</h4>}
+                <div className="row justify-center Comment-Gap-X">
+                    {comments && <img className='User-Img' src="https://m.media-amazon.com/images/M/MV5BYjM0MmQzNzItZmE3NC00YWVmLWI2ZmItMWEyNWNhYTVmNjQwXkEyXkFqcGdeQXVyNjU0ODkwMTU@._V1_.jpg" alt="moria casan" />}
+                    {comments && <p>Amazing page, keep going!</p>}
+                </div>
+                {comments && <div className="Comment-Divider"></div>}
+            </div>
+            {/* ))} */}
         </>
     )
 }

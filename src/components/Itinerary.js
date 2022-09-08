@@ -18,7 +18,7 @@ export default function Itinerary() {
         try {
             // const response = await axios.get(urlAPI + `/itineraries`)
             const response = await axios.get(`http://localhost:4000/itineraries/?city=${id}`)
-            .then(response => setItineraries(response.data.response))
+                .then(response => setItineraries(response.data.response))
             console.log(response);
             if (response.data.success) {
                 return setItineraries(response.data.response)
@@ -38,7 +38,7 @@ export default function Itinerary() {
     return (
         <>
             <div className='Itinerary-Card col'>
-                <h3 className='text-center'>Itineraries</h3>
+                <h2 className='text-center'>Itineraries</h2>
                 {itineraries.map((itinerary) => (
                     <>
                         <div className='Itinerary-Divider'></div>
@@ -60,10 +60,10 @@ export default function Itinerary() {
                             </div>
                         </div>
                         <Activities />
+                        <Comments />
                     </>
                 ))}
             </div>
-                <Comments />
         </>
     )
 }
