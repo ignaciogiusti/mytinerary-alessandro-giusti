@@ -1,0 +1,13 @@
+.Main-MyTinerary {
+    background: url(/public/img/travel-bg.jpg);
+    background-color: grey;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 90vh;
+}
+
+.MyTinerary-Gap {
+    gap: 15px;
+}
