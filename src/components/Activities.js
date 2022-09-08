@@ -38,12 +38,12 @@ export default function Itinerary() {
             <div className='bg-lightgrey Activities-Padding-Y'>
                 <h3 className='text-center'>Activities</h3>
                 <div className='Itinerary-Divider'></div>
-                <div className='row'>
+                <div className='Activities-Flex'>
                     {activities.map((activity) => (
                         <>
-                            <div className='col'>
+                            <div className='Activities-Col'>
                                 <h4 className='text-center'>{activity.name}</h4>
-                                <img className='Activities-Img flex-center' src={activity.photo} />
+                                <img className='Activities-Img' src={activity.photo} />
                             </div>
                         </>
                     ))}
