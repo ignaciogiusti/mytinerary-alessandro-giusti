@@ -4,6 +4,7 @@ import axios from 'axios'
 import urlAPI from '../API'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import '../styles/Activities.css'
 
 
 export default function Itinerary() {
@@ -34,26 +35,19 @@ export default function Itinerary() {
 
     return (
         <>
-            <div className='col'>
-                {activities.map((activity) => (
-                    <>
-                        <div className=''>
-                            <h3 className='text-center'>Itinerary Title {activity.name}</h3>
-                        </div>
-                        <div className=''>
-                            <div className=''>
-                                <img className='User-Img' src={activity.photo}/>
-                                <span className='text-bold'>User</span>
+            <div className='bg-lightgrey Activities-Padding-Y'>
+                <h3 className='text-center'>Activities</h3>
+                <div className='Itinerary-Divider'></div>
+                <div className='row'>
+                    {activities.map((activity) => (
+                        <>
+                            <div className='col'>
+                                <h4 className='text-center'>{activity.name}</h4>
+                                <img className='Activities-Img flex-center' src={activity.photo} />
                             </div>
-                            <div className=''>
-                                <div className=''>
-                                    <p><span className='text-bold'>Itinerary: </span>{activity.Itinerary}</p>
-                                </div>
-                            </div>
-                        </div>
-                        {/* <Comments /> */}
-                    </>
-                ))}
+                        </>
+                    ))}
+                </div>
             </div>
         </>
     )
