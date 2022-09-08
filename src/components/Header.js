@@ -1,12 +1,14 @@
 import '../styles/Header.css'
 import { useState } from 'react';
 import { Link as LinkRouter } from 'react-router-dom';
+import MyTinerary from '../pages/MyTinerary';
 
 const pages = [
   { name: 'Home', to: '/' },
   { name: 'Cities', to: '/cities' },
   { name: 'NewCity', to: '/newcity' },
-  { name: 'EditCity', to: '/editcity'}
+  { name: 'EditCity', to: '/editcity'},
+  { name: 'MyTinerary', to: '/mytinerary/auth/63126f9234a07b3e776c0684'}
 ]
 
 const navLinks = (page) => <LinkRouter className='navbar-links menu-hover' to={page.to} key={page.name}>{page.name}</LinkRouter>
