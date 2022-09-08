@@ -26,7 +26,7 @@ export default function CityDetails() {
     }
   }
 
-  console.log(city)
+  // console.log(city)
 
   useEffect(() => {
     getCity()
@@ -43,6 +43,7 @@ export default function CityDetails() {
           <p><span className='text-bold'>Population:</span> {city.population}</p>
         </div>
         <Itinerary />
+        {/* //la funcion flecha es ejecutar al ser click */}
         { <button className='backbutton' onClick={() => navigate(-1)}>Back to Cities</button>}
       </div>
     </>
