@@ -39,9 +39,8 @@ export default function Itinerary() {
                 <h3 className='text-center'>Itineraries</h3>
                 {itineraries.map((itinerary) => (
                     <>
-                        <div className='Itinerary-Title'>
-                        </div>
-                                <h3 className='text-center'>{itinerary.name}</h3>
+                        <div className='Itinerary-Divider'></div>
+                        <h3 className='text-center'>{itinerary.name}</h3>
                         <div className='row Itinerary-Container'>
                             <div className='col flex-center'>
                                 <img className='User-Img' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP_hRYKjo41v4UF78t8oKXYG5k8bFJHfiWOShjqXmV2zgu3tq35qI42XKdzRFeUol9viE&usqp=CAU' />
@@ -57,7 +56,7 @@ export default function Itinerary() {
                                     <p>{itinerary.tags}#Tag #Tag #Tag</p>
                                 </div>
                             </div>
-                        {/* <Comments /> */}
+                            {/* <Comments /> */}
                         </div>
                         <Activities />
                     </>
