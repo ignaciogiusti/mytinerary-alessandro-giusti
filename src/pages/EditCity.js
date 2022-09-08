@@ -3,11 +3,6 @@ import '../styles/InputCity.css';
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const selectOption = [
-    { option: 'Buen' },
-    { option: 'Paris' },
-    { option: 'Bariloche' }
-]
 
 const options = (selectCity) =>
     <option className="Input-NewCity">{selectCity.option}</option>
