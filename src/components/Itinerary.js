@@ -16,7 +16,8 @@ export default function Itinerary() {
     const getItineraries = async () => {
         try {
             // const response = await axios.get(urlAPI + `/itineraries`)
-            const response = await axios.get("http://localhost:4000/itineraries")
+            const response = await axios.get(`http://localhost:4000/itineraries/?city=${id}`)
+            .then(response => setItineraries(response.data.response))
             console.log(response);
             if (response.data.success) {
                 return setItineraries(response.data.response)
