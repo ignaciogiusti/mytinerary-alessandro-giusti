@@ -1,0 +1,32 @@
+
+
+
+.Comment-Button {
+    background-color: lightgrey;
+    height: 2rem;
+    width: 100%;
+    font-size: large;
+    transition: ease-in-out 0.2s;
+    border: none;
+    cursor: pointer;
+}
+.Comment-Button:hover {
+    background-color: rebeccapurple;
+    color: whitesmoke;
+}
+
+.Comment-Gap-X {
+    display: flex;
+    gap: 20px;
+}
+
+.Comment-Gap-Y {
+    display: flex;
+    gap: 10px;
+}
+
+.Comment-Divider {
+    padding: 5px 0;
+    margin: 10px 0;
+    border-top: 2px solid black;
+}
