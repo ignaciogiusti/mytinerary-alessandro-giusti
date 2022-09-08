@@ -17,7 +17,7 @@ export default function Cities() {
         <>
             <div className='Main-Cities'>
                 <div className='Search-Cities'>
-                    <input className='Input-Cities' type="text" name="" placeholder=' Search by city...' onChange={(event) => { setSearch(event.target.value) }} />
+                    <input className='Input-Cities' type="text" name="" placeholder=' Search by city...' onChange={(city) => { setSearch(city.target.value) }} />
                 </div>
                 <div className='citiesPageContainer'>
                     {cities?.response?.map((city) => (
