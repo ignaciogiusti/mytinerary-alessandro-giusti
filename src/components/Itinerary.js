@@ -5,13 +5,14 @@ import urlAPI from '../API'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Activities from './Activities'
+import Comments from './Comments'
 
 
 export default function Itinerary() {
     const [itineraries, setItineraries] = useState([])
     const params = useParams()
     const { id } = params
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const getItineraries = async () => {
         try {
@@ -28,7 +29,7 @@ export default function Itinerary() {
         }
     }
 
-    console.log(itineraries)
+    // console.log(itineraries)
 
     useEffect(() => {
         getItineraries()
@@ -57,12 +58,12 @@ export default function Itinerary() {
                                     <p>{itinerary.tags}#Tag #Tag #Tag</p>
                                 </div>
                             </div>
-                            {/* <Comments /> */}
                         </div>
                         <Activities />
                     </>
                 ))}
             </div>
+                <Comments />
         </>
     )
 }
