@@ -1,7 +1,10 @@
+import urlAPI from '../API';
 import '../styles/CityDetails.css'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
+import Itinerary from '../components/Itinerary';
+import Activities from '../components/Activities'
 
 
 export default function CityDetails() {
@@ -12,7 +15,7 @@ export default function CityDetails() {
 
   const getCity = async () => {
     try {
-      const response = await axios.get(`http://localhost:4000/cities/${id}`)
+      const response = await axios.get(urlAPI + `/cities/${id}`)
 
       if (response.data.success) {
         return setCity(response.data.response)
@@ -23,12 +26,11 @@ export default function CityDetails() {
     }
   }
 
-  console.log(city)
+  // console.log(city)
 
   useEffect(() => {
     getCity()
   }, [])
-
 
   return (
     <>
@@ -40,7 +42,9 @@ export default function CityDetails() {
           <p><span className='text-bold'>Founded:</span> {city.foundation}</p>
           <p><span className='text-bold'>Population:</span> {city.population}</p>
         </div>
-       { <button className='backbutton' onClick={() => navigate(-1)}>Back to Cities</button>}
+        <Itinerary />
+        {/* //la funcion flecha es ejecutar al ser click */}
+        { <button className='backbutton' onClick={() => navigate(-1)}>Back to Cities</button>}
       </div>
     </>
   )

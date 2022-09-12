@@ -1,0 +1,37 @@
+.Activities-Img {
+    max-width: 260px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.Activities-Flex {
+    display: flex;
+    flex-flow: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.Activities-Padding-Y {
+    padding: 15px 0;
+}
+
+.bg-lightgrey {
+    background-color: lightgrey;
+}
+
+@media (min-width: 426px) {
+    .Activities-Flex {
+        display: flex;
+        flex-flow: row;
+    }
+    .Activities-Col {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    .Activities-Img {
+        width: 255px;
+        max-width: 95%;
+    }
+}

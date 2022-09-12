@@ -10,6 +10,7 @@ import NewCity from '../pages/NewCity';
 import EditCity from '../pages/EditCity'
 import Bar from '../components/Bar';
 import Carousel from '../components/Carousel';
+import MyTinerary from '../pages/MyTinerary'
 
 
 export default function WebsiteLayout(props) {
@@ -28,6 +29,7 @@ export default function WebsiteLayout(props) {
                     <Route path='/editcity' element={<EditCity />} />
                     <Route path='/citydetails/:id' element={<CityDetails />} />
                     <Route path='/citydetails/:id' element={<Carousel />} />
+                    <Route path='/mytinerary/auth/63126f9234a07b3e776c0684' element={<MyTinerary />} />
                 </Routes>
                 <Footer />
             </BrowserRouter>

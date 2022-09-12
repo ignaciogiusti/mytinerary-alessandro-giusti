@@ -1,0 +1,45 @@
+
+
+.Itinerary-Card {
+    background-color: whitesmoke;
+    padding: 15px;
+    gap: 15px;
+    width: 90%;
+}
+
+.Itinerary-Container {
+    width: 100%;
+}
+
+.Itinerary-Divider {
+    border-bottom: 2px solid black;
+}
+
+.Itinerary-Content {
+    display: flex;
+    flex-flow: row;
+    gap: 15px;
+}
+
+.Itinerary-Subcontainer {
+    width: 85%;
+    gap: 10px;
+}
+
+.User-Img {
+    border-radius: 360px;
+    width: 75px;
+    max-width: 100px;
+}
+
+@media (min-width: 769px) {
+    .Itinerary-Card {
+        width: 850px;
+    }
+}
+@media (max-width: 425px) {
+    .Itinerary-Content {
+        flex-flow: column;
+        gap: 10px;
+    }
+ }
