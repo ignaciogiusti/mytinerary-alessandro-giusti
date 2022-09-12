@@ -45,8 +45,8 @@ export default function Itinerary() {
                         <h3 className='text-center'>{itinerary.name}</h3>
                         <div className='row Itinerary-Container'>
                             <div className='col flex-center'>
-                                <img className='User-Img' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP_hRYKjo41v4UF78t8oKXYG5k8bFJHfiWOShjqXmV2zgu3tq35qI42XKdzRFeUol9viE&usqp=CAU' />
-                                <span className='text-bold'>User</span>
+                                <img className='User-Img' src={itinerary.user.photo} />
+                                <span className='text-bold'>{itinerary.user.name} {itinerary.user.lastName}</span>
                             </div>
                             <div className='col flex-center Itinerary-Subcontainer'>
                                 <div className='Itinerary-Content'>
