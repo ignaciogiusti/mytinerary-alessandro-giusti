@@ -32,10 +32,11 @@ export default function InputNewCity({ city }) {
     const inputHandler = (e) => {
         setEditedCity ({
             ...editedCity, //los 3 puntos hace que se guarde el dato que se actualizo y no se borre (spread operator)
-            [e.target.name]:e.target.value
+            [e.target.name]:e.target.value //valores del objeto ya definidos / valores nuevos 
         })
     }
     const editCity = async () => {
+        //.some se encarga de que esten completos todos los campos para editar la ciudad o crear (en este caso)
         try {
             if (Object.values(editedCity).some((value) => !value)) {
                 return alert('you must complete all the fields')  
