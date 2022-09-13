@@ -9,21 +9,35 @@ const pages = [
   { name: 'NewCity', to: '/newcity' },
   { name: 'EditCity', to: '/editcity'},
   { name: 'MyTinerary', to: '/mytinerary/auth/63126f9234a07b3e776c0684'},
-  { name: 'SignUp', to: '/signup'}
+]
+
+const register = [
+  { name: 'Sign In', to:'/'},
+  { name: 'Sign Up', to:'/auth/signup'}
 ]
 
 const navLinks = (page) => <LinkRouter className='navbar-links menu-hover' to={page.to} key={page.name}>{page.name}</LinkRouter>
+const signLinks = (page) => <LinkRouter className='navbar-links menu-hover' to={page.to} key={page.name}>{page.name}</LinkRouter>
 
 
 export default function Header() {
 
   const [open, setOpen] = useState(false)
+  const [openSign, setOpenSign] = useState(false)
 
   const handleOpenMenu = () => {
     if (open == true) {
       setOpen(false)
     } else {
       setOpen(true)
+    }
+  }
+
+  const handleOpenMenuSign = () => {
+    if (openSign == true) {
+      setOpenSign(false)
+    } else {
+      setOpenSign(true)
     }
   }
 
@@ -44,7 +58,15 @@ export default function Header() {
           {pages.map(navLinks)}
         </div>
       </div>
-      <img className='img-header' src="/img/usuario.png" alt="avatar" />
+      <button className='buttonNavbar' onClick={handleOpenMenuSign}><img className='img-header' src="/img/usuario.png" alt="avatar" />
+      <div>
+          {
+            openSign ? <div className='col col-menu'>
+              {register.map(signLinks)}
+            </div> : null
+          }
+        </div>
+      </button>
     </div>
   )
 }
