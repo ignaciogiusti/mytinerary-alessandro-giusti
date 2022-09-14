@@ -13,8 +13,8 @@ export default function SignUp() {
         email: '',
         country: '',
         password: '',
-        from: 'Form',
-        role: 'User'
+        from: 'form',
+        role: 'user'
     })
     const navigate = useNavigate()
     const inputHandler = (e) => {
