@@ -12,6 +12,7 @@ import Bar from '../components/Bar';
 import Carousel from '../components/Carousel';
 import MyTinerary from '../pages/MyTinerary'
 import SignUp from '../pages/SignUp';
+import SignIn from '../pages/SignIn';
 
 
 export default function WebsiteLayout(props) {
@@ -26,6 +27,7 @@ export default function WebsiteLayout(props) {
                     <Route path='/' element={<Welcome />} />
                     <Route path='/cities' element={<Cities />} />
                     <Route path='*' element={<UnderConstruction />} /> 
+                    <Route path='/auth/signin' element={<SignIn />} />
                     <Route path='/auth/signup' element={<SignUp />} />
                     <Route path='/newcity' element={<NewCity />} />
                     <Route path='/editcity' element={<EditCity />} />
