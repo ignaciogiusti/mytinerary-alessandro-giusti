@@ -7,17 +7,17 @@ const pages = [
   { name: 'Home', to: '/' },
   { name: 'Cities', to: '/cities' },
   { name: 'NewCity', to: '/newcity' },
-  { name: 'EditCity', to: '/editcity'},
-  { name: 'MyTinerary', to: '/mytinerary/auth/63126f9234a07b3e776c0684'},
+  { name: 'EditCity', to: '/editcity' },
+  { name: 'MyTinerary', to: '/mytinerary/auth/63126f9234a07b3e776c0684' },
 ]
 
 const register = [
-  { name: 'Sign In', to:'/'},
-  { name: 'Sign Up', to:'/auth/signup'}
+  { name: 'Sign In', to: '/auth/signin' },
+  { name: 'Sign Up', to: '/auth/signup' }
 ]
 
 const navLinks = (page) => <LinkRouter className='navbar-links menu-hover' to={page.to} key={page.name}>{page.name}</LinkRouter>
-const signLinks = (page) => <LinkRouter className='navbar-links menu-hover' to={page.to} key={page.name}>{page.name}</LinkRouter>
+const signLinks = (page) => <LinkRouter className='navbar-links avatar-links' to={page.to} key={page.name}>{page.name}</LinkRouter>
 
 
 export default function Header() {
@@ -42,31 +42,32 @@ export default function Header() {
   }
 
   return (
-    <div className='navbar'>
-      <button className='buttonNavbar hide-nav-burger' onClick={handleOpenMenu}><img className='img-burger' src='img/MenuBurger.png' />
-        <div>
-          {
-            open ? <div className='col col-menu'>
-              {pages.map(navLinks)}
-            </div> : null
-          }
+    <>
+      <div className='navbar'>
+        <button className='buttonNavbar hide-nav-burger' onClick={handleOpenMenu}><img className='img-burger' src='img/MenuBurger.png' />
+          <div>
+            {
+              open ? <div className='col col-menu'>
+                {pages.map(navLinks)}
+              </div> : null
+            }
+          </div>
+        </button>
+        <div className='Logo-Center-Desktop'><LinkRouter to='/'><img className='img-header' src="/img/logo.png" alt="logo" /></LinkRouter></div>
+        <div className='hide-nav-desktop'>
+          <div className='row row-menu'>
+            {pages.map(navLinks)}
+          </div>
         </div>
-      </button>
-      <LinkRouter  to='/'><img className='img-header' src="/img/logo.png" alt="logo" /></LinkRouter>
-      <div className='hide-nav-desktop'>
-        <div className='row row-menu'>
-          {pages.map(navLinks)}
-        </div>
-      </div>
-      <button className='buttonNavbar' onClick={handleOpenMenuSign}><img className='img-header' src="/img/usuario.png" alt="avatar" />
-      <div>
-          {
-            openSign ? <div className='col col-menu'>
+        <div className='User-Avatar'>
+          <button className='buttonNavbar' onClick={handleOpenMenuSign}><img className='img-avatar' src="/img/usuario.png" alt="avatar" />{
+            openSign ? <div className='user-menu'>
               {register.map(signLinks)}
             </div> : null
           }
+          </button>
         </div>
-      </button>
-    </div>
+      </div>
+    </>
   )
 }
