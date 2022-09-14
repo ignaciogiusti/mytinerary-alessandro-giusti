@@ -1,12 +1,11 @@
 import React from 'react'
-import SignUpGoogle from '../components/SignUpGoogle'
+import SignInGoogle from '../components/SignInGoogle'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/SignInUp.css';
 
-export default function SignUp() {
-
+export default function SignIn() {
     const [newUser, setnewUser] = useState({
         name: '',
         lastName: '',
@@ -29,10 +28,10 @@ export default function SignUp() {
             if (Object.values(newUser).some((value) => !value)) {
                 return alert('you must complete all the fields')
             }
-            const response = await axios.post(`http://localhost:4000/auth/signup/`, newUser)
+            const response = await axios.post(`http://localhost:4000/auth/signin/`, newUser)
             console.log(response);
             if (response.data.success) {
-                navigate('/auth/signup')
+                navigate('/auth/signin')
             }
         } catch (error) {
             console.log(error);
@@ -56,7 +55,7 @@ export default function SignUp() {
                     <label className='text-light col text-indent'>Password:
                         <input type='text' name='name' className='Input-SignUp flex-center' onChange={inputHandler}></input></label>
                     <button className='button-SignUp flex-center' onClick={handleSubmit}>Send</button>
-                    <SignUpGoogle />
+                    <SignInGoogle />
                     {/* <div className='row row-menu'>
                         {register.map(navLinks)}
                     </div> */}
