@@ -3,7 +3,7 @@ import SignUpGoogle from '../components/SignUpGoogle'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import '../styles/SignUp.css';
+import '../styles/SignInUp.css';
 
 export default function SignUp() {
 
