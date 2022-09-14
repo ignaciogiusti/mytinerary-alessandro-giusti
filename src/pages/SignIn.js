@@ -1,41 +1,37 @@
 import React from 'react'
-import SignUpGoogle from '../components/SignUpGoogle'
+import SignInGoogle from '../components/SignInGoogle'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/SignInUp.css';
 
-export default function SignUp() {
-
-    const [newUser, setNewUser] = useState({
+export default function SignIn() {
+    const [newUser, setnewUser] = useState({
         name: '',
         lastName: '',
         photo: '',
         email: '',
         country: '',
-        password: '',
-        from: 'Form',
-        role: 'User'
+        password: ''
     })
     const navigate = useNavigate()
     const inputHandler = (e) => {
-        setNewUser({
+        setnewUser({
             ...newUser, //los 3 puntos hace que se guarde el dato que se actualizo y no se borre (spread operator)
             [e.target.name]: e.target.value
         })
     }
 
+
     const handleSubmit = async () => {
         try {
             if (Object.values(newUser).some((value) => !value)) {
                 return alert('you must complete all the fields')
-            }else{
-                console.log(newUser);
-                const response = await axios.post(`http://localhost:4000/auth/signup/`, newUser)
-                console.log(response);
-                if (response.data.success) {
-                    navigate('/cities')
-                }
+            }
+            const response = await axios.post(`http://localhost:4000/auth/signin/`, newUser)
+            console.log(response);
+            if (response.data.success) {
+                navigate('/auth/signin')
             }
         } catch (error) {
             console.log(error);
@@ -57,9 +53,9 @@ export default function SignUp() {
                     <label className='text-light col text-indent'>Email:
                         <input type='text' name='email' className='Input-SignUp flex-center'  onChange={inputHandler}></input></label>
                     <label className='text-light col text-indent'>Password:
-                        <input type='text' name='password' className='Input-SignUp flex-center' onChange={inputHandler}></input></label>
+                        <input type='text' name='name' className='Input-SignUp flex-center' onChange={inputHandler}></input></label>
                     <button className='button-SignUp flex-center' onClick={handleSubmit}>Send</button>
-                    <SignUpGoogle />
+                    <SignInGoogle />
                     {/* <div className='row row-menu'>
                         {register.map(navLinks)}
                     </div> */}
