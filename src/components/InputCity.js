@@ -60,7 +60,7 @@ console.log(editedCity);
                 <input type='text' name='country' className='Input-NewCity flex-center' onChange={inputHandler} placeholder={city.country}></input></label>
             <label className='text-light col text-indent'>Photo URL:
                 <input type='url' name='photo' className='Input-NewCity flex-center' onChange={inputHandler} placeholder={city.photo}></input></label>
-            <label className='text-light col text-indent'>Population Name:
+            <label className='text-light col text-indent'>Population:
                 <input type='number' name='population' className='Input-NewCity flex-center' onChange={inputHandler} placeholder={city.population}></input></label>
             <label className='text-light col text-indent'>Foundation Date:
                 <input type='date' name='foundation' className='Input-NewCity flex-center' onChange={inputHandler}  placeholder={city.foundation}></input></label>
