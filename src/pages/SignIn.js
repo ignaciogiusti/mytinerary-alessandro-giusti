@@ -12,7 +12,9 @@ export default function SignIn() {
         photo: '',
         email: '',
         country: '',
-        password: ''
+        password: '',
+        from: 'Form',
+        role: 'User'
     })
     const navigate = useNavigate()
     const inputHandler = (e) => {
@@ -53,7 +55,7 @@ export default function SignIn() {
                     <label className='text-light col text-indent'>Email:
                         <input type='text' name='email' className='Input-SignUp flex-center'  onChange={inputHandler}></input></label>
                     <label className='text-light col text-indent'>Password:
-                        <input type='text' name='name' className='Input-SignUp flex-center' onChange={inputHandler}></input></label>
+                        <input type='text' name='password' className='Input-SignUp flex-center' onChange={inputHandler}></input></label>
                     <button className='button-SignUp flex-center' onClick={handleSubmit}>Send</button>
                     <SignInGoogle />
                     {/* <div className='row row-menu'>

@@ -7,32 +7,35 @@ import '../styles/SignInUp.css';
 
 export default function SignUp() {
 
-    const [newUser, setnewUser] = useState({
+    const [newUser, setNewUser] = useState({
         name: '',
         lastName: '',
         photo: '',
         email: '',
         country: '',
-        password: ''
+        password: '',
+        from: 'Form',
+        role: 'User'
     })
     const navigate = useNavigate()
     const inputHandler = (e) => {
-        setnewUser({
+        setNewUser({
             ...newUser, //los 3 puntos hace que se guarde el dato que se actualizo y no se borre (spread operator)
             [e.target.name]: e.target.value
         })
     }
 
-
     const handleSubmit = async () => {
         try {
             if (Object.values(newUser).some((value) => !value)) {
                 return alert('you must complete all the fields')
-            }
-            const response = await axios.post(`http://localhost:4000/auth/signup/`, newUser)
-            console.log(response);
-            if (response.data.success) {
-                navigate('/auth/signup')
+            }else{
+                console.log(newUser);
+                const response = await axios.post(`http://localhost:4000/auth/signup/`, newUser)
+                console.log(response);
+                if (response.data.success) {
+                    navigate('/cities')
+                }
             }
         } catch (error) {
             console.log(error);
@@ -54,7 +57,7 @@ export default function SignUp() {
                     <label className='text-light col text-indent'>Email:
                         <input type='text' name='email' className='Input-SignUp flex-center'  onChange={inputHandler}></input></label>
                     <label className='text-light col text-indent'>Password:
-                        <input type='text' name='name' className='Input-SignUp flex-center' onChange={inputHandler}></input></label>
+                        <input type='text' name='password' className='Input-SignUp flex-center' onChange={inputHandler}></input></label>
                     <button className='button-SignUp flex-center' onClick={handleSubmit}>Send</button>
                     <SignUpGoogle />
                     {/* <div className='row row-menu'>
