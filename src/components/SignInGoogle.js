@@ -1,29 +1,33 @@
 import React, { useEffect, useRef } from 'react'
 import * as jose from 'jose'
-import SignIn from '../pages/SignIn';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
-export default function SignGoogle() {
+export default function SignInGoogle() {
 
-  // let [newUser,response] = useSignUserMutation();
-
+  const navigate = useNavigate()
   const buttonDiv = useRef(null)
   console.log(buttonDiv.current);
 
-  async function handleCredentialResponse(response){
+  async function handleCredentialResponse(response) {
 
-    let userObjet = jose.decodeJwt(response.credential);
-    console.log(userObjet);
+    let userObject = jose.decodeJwt(response.credential);
+    console.log(userObject);
 
     let data = {
-      name: userObjet.givenName,
-      photo: userObjet.picture,
-      email: userObjet.email,
-      password: userObjet.sub,
-      role: 'User', 
-      from: 'google', 
+      email: userObject.email,
+      password: userObject.sub,
+      from: 'google'
     }
-    // newUser(data)
+    try {
+      let response = await axios.post('http://localhost:4000/auth/signin', data)
+      //console.log(response)
+      localStorage.setItem('user', JSON.stringify(response.data.response.user))
+      navigate("/", { replace: true }) //redirigí al index
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   useEffect(() => {
