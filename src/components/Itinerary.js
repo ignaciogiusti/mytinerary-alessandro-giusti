@@ -59,7 +59,7 @@ export default function Itinerary() {
                                 </div>
                             </div>
                         </div>
-                        <Activities />
+                        <Activities activities={itinerary.activities}/>
                         <Comments />
                     </>
                 ))}

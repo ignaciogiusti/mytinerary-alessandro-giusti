@@ -7,31 +7,31 @@ import { useNavigate, useParams } from 'react-router-dom'
 import '../styles/Activities.css'
 
 
-export default function Itinerary() {
-    const [activities, setActivities] = useState([])
+export default function Itinerary({activities}) {
+    // const [activities, setActivities] = useState([])
     const params = useParams()
     const { id } = params
     const navigate = useNavigate();
 
-    const getActivities = async () => {
-        try {
-            // const response = await axios.get(urlAPI + `/activities`)
-            const response = await axios.get("http://localhost:4000/activities")
-            console.log(response);
-            if (response.data.success) {
-                return setActivities(response.data.response)
-            }
-            throw new Error("An error ocurred")
-        } catch (error) {
-            return console.log(error.message)
-        }
-    }
+    // const getActivities = async () => {
+    //     try {
+    //         // const response = await axios.get(urlAPI + `/activities`)
+    //         const response = await axios.get("http://localhost:4000/activities")
+    //         console.log(response);
+    //         if (response.data.success) {
+    //             return setActivities(response.data.response)
+    //         }
+    //         throw new Error("An error ocurred")
+    //     } catch (error) {
+    //         return console.log(error.message)
+    //     }
+    // }
 
     console.log(activities)
 
-    useEffect(() => {
-        getActivities()
-    }, [])
+    // useEffect(() => {
+    //     getActivities()
+    // }, [])
 
     return (
         <>
