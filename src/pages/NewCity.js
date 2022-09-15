@@ -26,12 +26,12 @@ export default function NewCity() {
   const handleSubmit = async () => {
     try {
         if (Object.values(newCity).some((value) => !value)) {
-            return toast.error('you need complete all fields', {position: "top-right"})
+            return toast.error('you need complete all fields', {position: "bottom-right"})
         }
         const response = await axios.post(`http://localhost:4000/cities/`, newCity)
         console.log(response);
         if (response.data.success) {
-          toast.success(`New City created!`, {position: "top-left"})
+          toast.success(`New City created!`, {position: "bottom-right"})
             navigate('/cities')
         }
     } catch (error) {
