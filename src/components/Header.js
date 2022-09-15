@@ -8,7 +8,7 @@ const pages = [
   { name: 'Cities', to: '/cities' },
   { name: 'NewCity', to: '/newcity' },
   { name: 'EditCity', to: '/editcity' },
-  { name: 'MyTinerary', to: '/mytinerary/auth/63126f9234a07b3e776c0684' },
+  { name: 'MyTinerary', to: `/mytinerary/auth/` },
 ]
 
 const register = [

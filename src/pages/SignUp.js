@@ -6,7 +6,6 @@ import axios from 'axios';
 import '../styles/SignInUp.css';
 
 export default function SignUp() {
-
     const [newUser, setNewUser] = useState({
         name: '',
         lastName: '',
@@ -14,8 +13,8 @@ export default function SignUp() {
         email: '',
         country: '',
         password: '',
-        from: 'Form',
-        role: 'User'
+        from: 'form',
+        role: 'user'
     })
     const navigate = useNavigate()
     const inputHandler = (e) => {
@@ -34,7 +33,7 @@ export default function SignUp() {
                 const response = await axios.post(`http://localhost:4000/auth/signup/`, newUser)
                 console.log(response);
                 if (response.data.success) {
-                    navigate('/cities')
+                    navigate('/')
                 }
             }
         } catch (error) {

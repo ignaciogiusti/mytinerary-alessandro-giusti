@@ -15,7 +15,7 @@ export default function CityDetails() {
 
   const getCity = async () => {
     try {
-      const response = await axios.get(urlAPI + `/cities/${id}`)
+      const response = await axios.get(`http://localhost:4000/cities/city=${id}`)
 
       if (response.data.success) {
         return setCity(response.data.response)

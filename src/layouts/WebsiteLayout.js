@@ -33,7 +33,7 @@ export default function WebsiteLayout(props) {
                     <Route path='/editcity' element={<EditCity />} />
                     <Route path='/citydetails/:id' element={<CityDetails />} />
                     <Route path='/citydetails/:id' element={<Carousel />} />
-                    <Route path='/mytinerary/auth/63126f9234a07b3e776c0684' element={<MyTinerary />} />
+                    <Route path='/mytinerary/auth/' element={<MyTinerary />} />
                 </Routes>
                 <Footer />
             </BrowserRouter>
