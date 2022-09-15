@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import * as jose from 'jose'
-import SignUp from '../pages/SignUp';
-
+import axios from 'axios'
 
 export default function SignUpGoogle() {
 
@@ -10,21 +9,29 @@ export default function SignUpGoogle() {
   const buttonDiv = useRef(null)
   console.log(buttonDiv.current);
 
-  async function handleCredentialResponse(response){
+  async function handleCredentialResponse(response) {
 
-    let userObjet = jose.decodeJwt(response.credential);
-    console.log(userObjet);
+    let userObject = jose.decodeJwt(response.credential);
+    console.log(userObject);
 
     let data = {
-      name: userObjet.givenName,
-      photo: userObjet.picture,
-      email: userObjet.email,
-      password: userObjet.sub,
-      role: 'User', 
-      from: 'google', 
+      name: userObject.given_name,
+      lastName: userObject.family_name,
+      photo: userObject.picture,
+      country: 'null',
+      email: userObject.email,
+      password: userObject.sub,
+      role: 'user',
+      from: 'google',
     }
     // newUser(data)
+    try {
+      await axios.post('http://localhost:4000/auth/signup', data)
+    } catch (error) {
+      console.log(error)
+    }
   }
+
 
   useEffect(() => {
     /* global google */

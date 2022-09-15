@@ -21,19 +21,19 @@ export default function WebsiteLayout(props) {
             <BrowserRouter>
                 <ScrollToTop />
                 <Header />
-                <Bar/>
+                <Bar />
                 {/* { props.children } */}
                 <Routes>
                     <Route path='/' element={<Welcome />} />
                     <Route path='/cities' element={<Cities />} />
-                    <Route path='*' element={<UnderConstruction />} /> 
-                    <Route path='/auth/signin' element={<SignIn />} />
-                    <Route path='/auth/signup' element={<SignUp />} />
+                    <Route path='*' element={<UnderConstruction />} />
                     <Route path='/newcity' element={<NewCity />} />
                     <Route path='/editcity' element={<EditCity />} />
                     <Route path='/citydetails/:id' element={<CityDetails />} />
                     <Route path='/citydetails/:id' element={<Carousel />} />
-                    <Route path='/mytinerary/auth/' element={<MyTinerary />} />
+                    <Route path='/mytinerary/auth/:id' element={<MyTinerary />} />
+                    <Route path='/auth/signin' element={<SignIn />} />
+                    <Route path='/auth/signup' element={<SignUp />} />
                 </Routes>
                 <Footer />
             </BrowserRouter>

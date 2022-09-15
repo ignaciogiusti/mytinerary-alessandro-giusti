@@ -4,7 +4,9 @@ import { Link as LinkRouter } from 'react-router-dom';
 const pages = [
   {name: 'Home', to: '/'},
   {name: 'Cities', to: '/cities'},
-  {name: 'NewCity', to: '/newcity'}
+  /* {name: 'MyTineraries', to: '/mytinerary/auth/'}, */
+  /* { name: 'NewCity', to: '/newcity' },
+  { name: 'EditCity', to: '/editcity' }, */
 ]
 
 const navLinks = (page) =>  <LinkRouter className='text-light' to={page.to}>{page.name}</LinkRouter>
