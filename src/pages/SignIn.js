@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/SignInUp.css';
+import {toast} from 'react-hot-toast'
 
 export default function SignIn() {
     const [data, setLoggedUser] = useState({
@@ -21,19 +22,21 @@ export default function SignIn() {
 
     useEffect(()=>{
         if(JSON.parse(localStorage.getItem('user'))) localStorage.removeItem("user")
+        toast.success(`Signed-out`, {position: "bottom-right"})
     }, [])
 
 
     const handleSubmit = async () => {
         try {
             if (Object.values(data).some((value) => !value)) {
-                return alert('you must complete all the fields')
+                return toast.error('Sign-in failed', {position: "bottom-right"})
             }
             const response = await axios.post(`http://localhost:4000/auth/signin/`, data)
             console.log(response);
             localStorage.setItem('user', JSON.stringify(response.data.response.user))
             navigate("/", { replace: true }) //redirigí al index
             if (response.data.success) {
+                toast.success(`Sign-in succesful`, {position: "bottom-right"})
                 navigate('/')
             }
         } catch (error) {
