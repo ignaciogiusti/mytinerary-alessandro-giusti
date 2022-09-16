@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import '../styles/InputCity.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import {toast} from 'react-hot-toast'
 
 
 // const form = [
@@ -39,11 +40,12 @@ export default function InputNewCity({ city }) {
         //.some se encarga de que esten completos todos los campos para editar la ciudad o crear (en este caso)
         try {
             if (Object.values(editedCity).some((value) => !value)) {
-                return alert('you must complete all the fields')  
+                return toast.error('You need to complete all fields', {position: "bottom-right"})
             }
             const response = await axios.patch(`http://localhost:4000/cities/${city._id}`, editedCity)
             console.log(response);
             if (response.data.success) {
+                toast.success(`City modified!`, {position: "bottom-right"})
                 navigate('/cities')
             }
         } catch (error) {
