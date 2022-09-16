@@ -11,7 +11,7 @@ const usersAPI = createApi({
     // en el ternario, pregunta; si search es negado, es decir, no existe (sea undefined o lo que sea), va a mandar por query un string vacio ("")
     // en caso de que si exista search, va a usar search, osea, lo que le está llegando
     endpoints: (builder) => ({
-        createUser: builder.mutation({
+        createUser: builder.query({
             query: (user) => ({
                 url: '/auth/signup/', 
                 method: 'POST',
