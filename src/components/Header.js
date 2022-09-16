@@ -1,5 +1,5 @@
 import '../styles/Header.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link as LinkRouter } from 'react-router-dom';
 import MyTinerary from '../pages/MyTinerary';
 
@@ -16,12 +16,19 @@ const register = [
   { name: 'Sign Up', to: '/auth/signup' }
 ]
 
+const userName = JSON.parse(localStorage.getItem('user'))?.name
+
+const userLogged = [
+  { name: userName, to: '#'},
+  { name: 'Sign Out', to: '/auth/signin'}, 
+]
+console.log(userName)
+
 const navLinks = (page) => <LinkRouter className='navbar-links menu-hover' to={page.to} key={page.name}>{page.name}</LinkRouter>
 const signLinks = (page) => <LinkRouter className='navbar-links avatar-links' to={page.to} key={page.name}>{page.name}</LinkRouter>
 
-
 export default function Header() {
-
+  const [logged,setLogged] = useState(false)
   const [open, setOpen] = useState(false)
   const [openSign, setOpenSign] = useState(false)
 
@@ -40,6 +47,17 @@ export default function Header() {
       setOpenSign(true)
     }
   }
+
+  console.log(userName)
+
+  useEffect(() => {
+    console.log("useeffect???'")
+    if(JSON.parse(localStorage.getItem('user'))){
+      setLogged(true)
+    }else{
+      setLogged(false)
+    }
+  }, [])
 
   return (
     <>
@@ -62,7 +80,13 @@ export default function Header() {
         <div className='User-Avatar'>
           <button className='buttonNavbar' onClick={handleOpenMenuSign}><img className='img-avatar' src="/img/usuario.png" alt="avatar" />{
             openSign ? <div className='user-menu'>
-              {register.map(signLinks)}
+              { logged ? userLogged.map(signLinks) : register.map(signLinks)}
+              {/* if (userName) {
+                logged.map(logged)
+              } else {
+                register.map(signLinks)
+              } */}
+               {/* {register.map(signLinks)}  */}
             </div> : null
           }
           </button>
