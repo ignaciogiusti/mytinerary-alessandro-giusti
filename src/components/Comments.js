@@ -43,7 +43,7 @@ export default function Comments({comments}) {
                     <>
                         {showComments && <h4 className="text-center">{item.name}</h4> }
                         <div className="row justify-center Comment-Gap-X Comment-Gap-Y">
-                            {showComments && <img className='User-Img' src={item.user.avatar} alt={item.name} /> }
+                            {showComments && <img className='User-Img' src={item.avatar} alt={item.name} /> }
                             {showComments && <p>{item.comment}</p> }
                         </div>
                     </>
