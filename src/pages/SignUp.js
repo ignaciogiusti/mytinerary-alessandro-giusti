@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/SignInUp.css';
+import {toast} from 'react-hot-toast'
 
 export default function SignUp() {
     const [newUser, setNewUser] = useState({
@@ -27,7 +28,7 @@ export default function SignUp() {
     const handleSubmit = async () => {
         try {
             if (Object.values(newUser).some((value) => !value)) {
-                return alert('you must complete all the fields')
+                return toast.error('You need to complete all fields', {position: "bottom-right"})
             }else{
                 console.log(newUser);
                 const response = await axios.post(`http://localhost:4000/auth/signup/`, newUser)
