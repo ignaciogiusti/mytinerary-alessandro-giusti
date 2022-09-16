@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import SignInGoogle from '../components/SignInGoogle'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -18,6 +18,10 @@ export default function SignIn() {
             [e.target.name]: e.target.value
         })
     }
+
+    useEffect(()=>{
+        if(JSON.parse(localStorage.getItem('user'))) localStorage.removeItem("user")
+    }, [])
 
 
     const handleSubmit = async () => {
