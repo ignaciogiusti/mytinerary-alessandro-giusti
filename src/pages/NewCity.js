@@ -3,7 +3,7 @@ import '../styles/InputCity.css';
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import {toast} from 'react-hot-toast'
 
 export default function NewCity() {
   const [newCity, setNewCity] = useState({
@@ -26,11 +26,12 @@ export default function NewCity() {
   const handleSubmit = async () => {
     try {
         if (Object.values(newCity).some((value) => !value)) {
-            return alert('you must complete all the fields')  
+            return toast.error('You need to complete all fields', {position: "bottom-right"})
         }
         const response = await axios.post(`http://localhost:4000/cities/`, newCity)
         console.log(response);
         if (response.data.success) {
+          toast.success(`New City created!`, {position: "bottom-right"})
             navigate('/cities')
         }
     } catch (error) {
@@ -50,7 +51,7 @@ export default function NewCity() {
           <input type='text' name='country' className='Input-NewCity flex-center' onChange={inputHandler}></input></label>
         <label className='text-light col text-indent'>Photo URL:
           <input type='url' name='photo' className='Input-NewCity flex-center' onChange={inputHandler}></input></label>
-        <label className='text-light col text-indent'>Population Name:
+        <label className='text-light col text-indent'>Population:
           <input type='number' name='population' className='Input-NewCity flex-center' onChange={inputHandler}></input></label>
         <label className='text-light col text-indent'>Foundation Date:
           <input type='date' name='foundation' className='Input-NewCity flex-center' onChange={inputHandler} ></input></label>
