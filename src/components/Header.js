@@ -17,18 +17,21 @@ const register = [
 ]
 
 const userName = JSON.parse(localStorage.getItem('user'))?.name
+const userPhoto = JSON.parse(localStorage.getItem('user'))?.photo
 
 const userLogged = [
-  { name: userName, to: '#'},
-  { name: 'Sign Out', to: '/auth/signin'}, 
+  { name: userName, to: '#' },
+  { name: 'Sign Out', to: '/auth/signin' }
 ]
 console.log(userName)
 
 const navLinks = (page) => <LinkRouter className='navbar-links menu-hover' to={page.to} key={page.name}>{page.name}</LinkRouter>
+
 const signLinks = (page) => <LinkRouter className='navbar-links avatar-links' to={page.to} key={page.name}>{page.name}</LinkRouter>
 
+
 export default function Header() {
-  const [logged,setLogged] = useState(false)
+  const [logged, setLogged] = useState(false)
   const [open, setOpen] = useState(false)
   const [openSign, setOpenSign] = useState(false)
 
@@ -52,9 +55,9 @@ export default function Header() {
 
   useEffect(() => {
     console.log("useeffect???'")
-    if(JSON.parse(localStorage.getItem('user'))){
+    if (JSON.parse(localStorage.getItem('user'))) {
       setLogged(true)
-    }else{
+    } else {
       setLogged(false)
     }
   }, [])
@@ -78,17 +81,19 @@ export default function Header() {
           </div>
         </div>
         <div className='User-Avatar'>
-          <button className='buttonNavbar' onClick={handleOpenMenuSign}><img className='img-avatar' src="/img/usuario.png" alt="avatar" />{
-            openSign ? <div className='user-menu'>
-              { logged ? userLogged.map(signLinks) : register.map(signLinks)}
-              {/* if (userName) {
+          <button className='buttonNavbar' onClick={handleOpenMenuSign}>
+            {logged ? <img className='img-avatar' src={userPhoto} alt="avatar" /> : <img className='img-avatar' src="/img/usuario.png" alt="avatar" />}
+            {
+              openSign ? <div className='user-menu'>
+                {logged ? userLogged.map(signLinks) : register.map(signLinks)}
+                {/* if (userName) {
                 logged.map(logged)
               } else {
                 register.map(signLinks)
               } */}
-               {/* {register.map(signLinks)}  */}
-            </div> : null
-          }
+                {/* {register.map(signLinks)}  */}
+              </div> : null
+            }
           </button>
         </div>
       </div>
