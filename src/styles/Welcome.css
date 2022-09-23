@@ -9,6 +9,16 @@
   font-family: 'Poppins';
 }
 
+.Main-BG {
+  height: 90vh;
+  padding: 1rem 0 1rem 0;
+  background: url(/public/img/travel-bg.jpg);
+  height: 90vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: grey;
+}
+
 .Main {
   background: url(/public/img/Venice.jpg);
   height: 90vh;
