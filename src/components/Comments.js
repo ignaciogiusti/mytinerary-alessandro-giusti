@@ -3,11 +3,11 @@ import axios from "axios"
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import urlAPI from '../API'
-
 import React from 'react'
+import NewComment from './NewComment'
 
-export default function Comments({comments}) {
-   /*  const [comments, setComments] = useState([]) */
+export default function Comments({ comments }) {
+    /*  const [comments, setComments] = useState([]) */
     const [showComments, setShowComments] = useState(false)
     const params = useParams()
     const { id } = params
@@ -41,14 +41,15 @@ export default function Comments({comments}) {
                 <button className='Comment-Button' onClick={handleComments}>Comments</button>
                 {comments.map((item) => (
                     <>
-                        {showComments && <h4 className="text-center">{item.name}</h4> }
+                        {showComments && <h4 className="text-center">{item.name}</h4>}
                         <div className="row justify-center Comment-Gap-X Comment-Gap-Y">
-                            {showComments && <img className='User-Img' src={item.avatar} alt={item.name} /> }
-                            {showComments && <p>{item.comment}</p> }
+                            {showComments && <img className='User-Img' src={item.avatar} alt={item.name} />}
+                            {showComments && <p>{item.comment}</p>}
                         </div>
                     </>
                 ))}
             </div>
+            <NewComment />
         </>
     )
 }
