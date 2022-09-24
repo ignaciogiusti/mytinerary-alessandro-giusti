@@ -1,10 +1,10 @@
 import React from 'react'
 import '../styles/Profile.css'
 import axios from "axios";
-import {toast} from 'react-hot-toast'
+import { toast } from 'react-hot-toast'
 import { useEffect, useState } from 'react'
 
-export default function Profile({user}) {
+export default function Profile({ user }) {
     const userName = JSON.parse(localStorage.getItem('user'))?.name
     const userPhoto = JSON.parse(localStorage.getItem('user'))?.photo
 
@@ -13,22 +13,23 @@ export default function Profile({user}) {
         lastName: '',
         photo: '',
         country: ''
-      })
-      const inputHandler = (e) => {
+    })
+    let localStorageUser = JSON.parse(localStorage.getItem("user"))
+    const inputHandler = (e) => {
         setEditUser({
-          ...editUser, //los 3 puntos hace que se guarde el dato que se actualizo y no se borre (spread operator)
-          [e.target.name]: e.target.value
+            ...editUser, //los 3 puntos hace que se guarde el dato que se actualizo y no se borre (spread operator)
+            [e.target.name]: e.target.value
         })
-      }
-      const userEditSubmit = async () => {
+    }
+    const userEditSubmit = async () => {
         try {
             if (Object.values(editUser).some((value) => !value)) {
-                return toast.error('You need to complete a field', {position: "bottom-right"})
+                return toast.error('You need to complete a field', { position: "bottom-right" })
             }
-            const response = await axios.patch(`http://localhost:4000/auth/profile/${user._id}`, editUser)
+            const response = await axios.patch(`http://localhost:4000/auth/profile/${localStorageUser.id}`, editUser)
             console.log(response);
             if (response.data.success) {
-              toast.success(`Your information was modified!`, {position: "bottom-right"})
+                toast.success(`Your information was modified!`, { position: "bottom-right" })
             }
         } catch (error) {
             console.log(error);
@@ -42,7 +43,7 @@ export default function Profile({user}) {
                     <h2 className='text-center text-light'>{userName}'s <span className='Title-Tinerary'>Profile</span></h2>
                     <img className='Profile-Img' src={userPhoto} />
                 </div>
-                <form className='Profile-Form'>
+                <div className='Profile-Form'>
                     <label className='text-light col text-indent'>First Name:
                         <input type='text' name='name' className='Input-NewCity flex-center' onChange={inputHandler} ></input></label>
                     <label className='text-light col text-indent'>Last Name:
@@ -52,7 +53,7 @@ export default function Profile({user}) {
                     <label className='text-light col text-indent'>Country:
                         <input type='text' name='country' className='Input-NewCity flex-center' onChange={inputHandler} ></input></label>
                     <button className='button-NewCity flex-center' onClick={userEditSubmit} >Send</button>
-                </form>
+                </div>
             </div>
         </>
     )
