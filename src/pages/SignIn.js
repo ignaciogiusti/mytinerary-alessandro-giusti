@@ -34,7 +34,7 @@ export default function SignIn() {
             const response = await axios.post(`http://localhost:4000/auth/signin/`, data)
             console.log(response);
             localStorage.setItem('user', JSON.stringify(response.data.response.user))
-            localStorage.setItem('token', JSON.stringify(response.data.response.token))
+            localStorage.setItem('token', response.data.response.token)
             navigate("/", { replace: true }) //redirigí al index
             if (response.data.success) {
                 toast.success(`Sign-in succesful`, { position: "bottom-right" })
