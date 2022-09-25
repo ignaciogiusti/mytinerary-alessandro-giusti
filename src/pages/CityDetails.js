@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
 import Itinerary from '../components/Itinerary';
-import Activities from '../components/Activities'
 
 
 export default function CityDetails() {
@@ -15,7 +14,7 @@ export default function CityDetails() {
 
   const getCity = async () => {
     try {
-      const response = await axios.get(`http://localhost:4000/cities/${id}`)
+      const response = await axios.get(urlAPI + `/cities/${id}`)
 
       if (response.data.success) {
         return setCity(response.data.response)

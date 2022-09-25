@@ -17,7 +17,7 @@ export default function Itinerary() {
 
     const getItineraries = async () => {
         try {
-            const response = await axios.get(`http://localhost:4000/itineraries/?city=${id}`)
+            const response = await axios.get(urlAPI + `/itineraries/?city=${id}`)
             if (response.data.success) {
                 setItineraries(response.data.response)
                 
@@ -39,7 +39,7 @@ console.log(itineraries)
                 userId: isLiked
             }
 
-            const response = await axios.post(`http://localhost:4000/likes/${type === "dislike" ? "dislike" : "like"}`, data)
+            const response = await axios.post(urlAPI + `/likes/${type === "dislike" ? "dislike" : "like"}`, data)
 
             if (response.data.success) return getItineraries()
 

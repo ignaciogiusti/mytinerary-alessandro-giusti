@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import * as jose from 'jose'
 import axios from 'axios';
+import urlAPI from '../API'
 import { useNavigate } from 'react-router-dom';
 
 
@@ -21,7 +22,7 @@ export default function SignInGoogle() {
       from: 'google'
     }
     try {
-      let response = await axios.post('http://localhost:4000/auth/signin', data)
+      let response = await axios.post(urlAPI + '/auth/signin', data)
       //console.log(response)
       localStorage.setItem('user', JSON.stringify(response.data.response.user))
       navigate("/", { replace: true }) //redirigí al index
