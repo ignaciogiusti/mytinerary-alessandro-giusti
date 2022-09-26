@@ -1,6 +1,7 @@
-import React from 'react'
-import '../styles/Profile.css'
+import '../styles/Profile.css';
+import React from 'react';
 import axios from "axios";
+import urlAPI from '../API';
 import { toast } from 'react-hot-toast'
 import { useEffect, useState } from 'react'
 
@@ -26,7 +27,7 @@ export default function Profile({ user }) {
             if (Object.values(editUser).some((value) => !value)) {
                 return toast.error('You need to complete a field', { position: "bottom-right" })
             }
-            const response = await axios.patch(`http://localhost:4000/auth/profile/${localStorageUser.id}`, editUser)
+            const response = await axios.patch(urlAPI + `/auth/profile/${localStorageUser.id}`, editUser)
             console.log(response);
             if (response.data.success) {
                 toast.success(`Your information was modified!`, { position: "bottom-right" })

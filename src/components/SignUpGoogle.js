@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import * as jose from 'jose'
 import axios from 'axios'
+import urlAPI from '../API'
 
 export default function SignUpGoogle() {
 
@@ -26,7 +27,7 @@ export default function SignUpGoogle() {
     }
     // newUser(data)
     try {
-      await axios.post('http://localhost:4000/auth/signup', data)
+      await axios.post(urlAPI + '/auth/signup', data)
     } catch (error) {
       console.log(error)
     }

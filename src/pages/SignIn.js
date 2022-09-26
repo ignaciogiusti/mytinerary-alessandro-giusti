@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/SignInUp.css';
 import { toast } from 'react-hot-toast'
+import urlAPI from '../API';
 
 export default function SignIn() {
     const [data, setLoggedUser] = useState({
@@ -31,7 +32,7 @@ export default function SignIn() {
             if (Object.values(data).some((value) => !value)) {
                 return toast.error('Sign-in failed', { position: "bottom-right" })
             }
-            const response = await axios.post(`http://localhost:4000/auth/signin/`, data)
+            const response = await axios.post(urlAPI + `/auth/signin/`, data)
             console.log(response);
             localStorage.setItem('user', JSON.stringify(response.data.response.user))
             localStorage.setItem('token', response.data.response.token)

@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 import '../styles/InputCity.css';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import urlAPI from '../API';
 import {toast} from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom';
 
 
 // const form = [
@@ -42,7 +43,7 @@ export default function InputNewCity({ city }) {
             if (Object.values(editedCity).some((value) => !value)) {
                 return toast.error('You need to complete all fields', {position: "bottom-right"})
             }
-            const response = await axios.patch(`http://localhost:4000/cities/${city._id}`, editedCity)
+            const response = await axios.patch(urlAPI + `/cities/${city._id}`, editedCity)
             console.log(response);
             if (response.data.success) {
                 toast.success(`City modified!`, {position: "bottom-right"})
