@@ -1,9 +1,9 @@
-import InputCity from "../components/InputCity";
 import '../styles/InputCity.css';
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import {toast} from 'react-hot-toast'
+import urlAPI from '../API'
 
 export default function NewCity() {
   const [newCity, setNewCity] = useState({
@@ -28,7 +28,7 @@ export default function NewCity() {
         if (Object.values(newCity).some((value) => !value)) {
             return toast.error('You need to complete all fields', {position: "bottom-right"})
         }
-        const response = await axios.post(`http://localhost:4000/cities/`, newCity)
+        const response = await axios.post(urlAPI + `/cities/`, newCity)
         console.log(response);
         if (response.data.success) {
           toast.success(`New City created!`, {position: "bottom-right"})

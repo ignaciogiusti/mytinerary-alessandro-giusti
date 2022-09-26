@@ -2,6 +2,7 @@ import InputCity from "../components/InputCity";
 import '../styles/InputCity.css';
 import axios from "axios";
 import { useEffect, useState } from "react";
+import urlAPI from '../API'
 
 
 const options = (selectCity) =>
@@ -14,7 +15,7 @@ export default function EditCity() {
 
     const getCities = async () => {
         try {
-            const response = await axios.get('http://localhost:4000/cities/')
+            const response = await axios.get(urlAPI + '/cities/')
             if (response.data.success) {
                 setCities(response.data.response)
                 setSelectedCity(response.data.response[0])

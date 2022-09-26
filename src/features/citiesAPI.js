@@ -1,10 +1,11 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
+import urlAPI from '../API'
 
 const citiesAPI = createApi({
     reducerPath: "citiesAPI",
 
     baseQuery: fetchBaseQuery({
-        baseUrl: "http://localhost:4000/"
+        baseUrl: urlAPI
     }),
 
     // recibe search como parametro, que viene desde Cities.js cuando se llama al useGetAllCitiesQuery

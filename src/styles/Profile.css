@@ -1,0 +1,17 @@
+.Profile-Img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 360px;
+}
+
+.Profile-H {
+    gap: 10px;
+}
+
+.Profile-Form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
